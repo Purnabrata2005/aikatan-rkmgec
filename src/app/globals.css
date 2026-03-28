@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(184, 92, 56, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(213, 206, 163, 0.05) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(60, 42, 33, 0.2) 0%, transparent 50%),
+    #1A120B;
+  background-color: #1A120B;
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce), (pointer: coarse) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    display: none;
+  }
+}
+
+/* Subtle particle or noise effect for the background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  z-index: 0;
+}
+
+@layer base {
+  :root {
+    /* Deep Tech Brown */
+    --background: 26 39% 7%;
+    --foreground: 0 0% 96%;
+
+    /* Dark Warm Brown */
+    --secondary-bg: 25 29% 15%;
+
+    --card: 26 39% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 26 39% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    /* Interactive Accent Metallic Copper */
+    --primary: 19 53% 47%;
+    --primary-foreground: 0 0% 96%;
+
+    --secondary: 25 29% 15%;
+    --secondary-foreground: 0 0% 81%;
+
+    --muted: 25 29% 15%;
+    --muted-foreground: 0 0% 81%;
+
+    /* Soft Luxury Gold */
+    --accent: 44 38% 74%;
+    --accent-foreground: 26 39% 7%;
+
+    /* Highlight Cream Beige */
+    --highlight: 60 40% 85%;
+    --highlight-foreground: 26 39% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 29% 25%;
+    --input: 25 29% 25%;
+    --ring: 19 53% 47%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.black-gradient {
+  background: linear-gradient(135deg, #3C2A21 0%, #1A120B 100%);
+}
+
+.glass-morphism {
+  background: rgba(60, 42, 33, 0.4);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(213, 206, 163, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #D5CEA3, #E5E5CB, #B85C38);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animations */
+.glow-on-hover {
+  transition: all 0.3s ease;
+}
+.glow-on-hover:hover {
+  box-shadow: 0 0 15px rgba(213, 206, 163, 0.4);
+  border-color: rgba(213, 206, 163, 0.5);
+}
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
