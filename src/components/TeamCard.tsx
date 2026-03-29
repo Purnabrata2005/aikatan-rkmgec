@@ -50,7 +50,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, image, instagram, twitt
 
 export default TeamCard;
 
-const SocialIcon: React.FC<{ href: string; Icon: React.ElementType; color: string }> = ({ href, Icon }) => (
+const SocialIcon: React.FC<{ href: string; Icon: React.ElementType; color?: string }> = ({ href, Icon }) => (
      <Link href={href} target="_blank" rel="noopener noreferrer" className="group/icon p-2 rounded-full border border-accent/10 hover:border-primary/50 transition-all duration-300">
           <Icon className="w-4 h-4 text-muted-foreground group-hover/icon:text-primary transition-colors duration-300" style={{ color: 'currentColor' }} />
      </Link>
