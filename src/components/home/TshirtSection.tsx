@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image'
 import { Zap, ShieldCheck, Box, ChevronRight } from 'lucide-react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
