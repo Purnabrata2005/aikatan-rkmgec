@@ -107,14 +107,14 @@ const Navbar = () => {
                 <span className="text-primary group-hover:text-highlight group-hover:scale-110 transition-all duration-300">
                   {item.icon}
                 </span>
-                <span className="text-xs font-orbitron font-medium tracking-[0.2em] uppercase text-muted-foreground group-hover:text-foreground transition-colors">
+                <span className="text-xs font-outfit font-medium tracking-[0.2em] uppercase text-muted-foreground group-hover:text-foreground transition-colors">
                   {item.text}
                 </span>
               </div>
 
-              {/* Technical Code under the text */}
-              <span className="text-[8px] font-kodeMono text-accent/40 mt-1 group-hover:text-primary transition-colors tracking-widest">
-                SEC_0{index + 1}
+              {/* Artistic flair under the text */}
+              <span className="text-[10px] font-playfair italic text-accent/50 mt-1 group-hover:text-fest-pink transition-colors tracking-wider">
+                Vol. 0{index + 1}
               </span>
             </Link>
           ))}
@@ -135,7 +135,7 @@ const Navbar = () => {
                   <SheetClose asChild key={index}>
                     <Link
                       href={item.navigateTo}
-                      className="flex items-center space-x-4 text-xl font-orbitron text-muted-foreground hover:text-primary transition-colors"
+                      className="flex items-center space-x-4 text-xl font-outfit text-muted-foreground hover:text-primary transition-colors"
                     >
                       {item.icon}
                       <span className="tracking-widest uppercase">

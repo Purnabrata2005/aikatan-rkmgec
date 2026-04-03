@@ -1,38 +1,26 @@
 import ClientLayout from "@/components/ClientLayout";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Kode_Mono, Bruno_Ace, Orbitron, Space_Grotesk, Sora, Inter, Poppins } from "next/font/google";
+import { Cinzel, Playfair_Display, Dancing_Script, Outfit, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const digitalFont = localFont({
-  src: "./fonts/DigitalNumbers.woff",
-  variable: "--font-digital",
+const cinzelFont = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
 });
 
-const kodeMonoFont = Kode_Mono({
+const playfairFont = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-kode-mono",
+  variable: "--font-playfair",
 });
 
-const brunoAceFont = Bruno_Ace({
+const dancingScriptFont = Dancing_Script({
   subsets: ["latin"],
-  variable: "--font-bruno-ace",
-  weight: "400",
-})
-
-const orbitronFont = Orbitron({
-  subsets: ["latin"],
-  variable: "--font-orbitron",
+  variable: "--font-dancing-script",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const outfitFont = Outfit({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
-});
-
-const sora = Sora({
-  subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-outfit",
 });
 
 const inter = Inter({
@@ -48,23 +36,24 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Aikatan",
-  description: "Aikatan is the official cultural fest platform of Ramkrishna Mahato Government Engineering College. Event details are coming soon.",
+  description: "Aikatan is the official cultural festival of Ramkrishna Mahato Government Engineering College.",
   keywords: [
     "aikatan",
     "rkmgec",
     "cultural fest",
-    "coming soon",
-    "awwwards",
+    "fest",
+    "arts",
+    "cultural"
   ],
-  metadataBase: new URL("https://techlavya-rkmgec.com/"),
+  metadataBase: new URL("https://aikatan-rkmgec.com/"),
   openGraph: {
     title: "Aikatan",
     type: "website",
     siteName: "Aikatan",
-    description: "Official cultural fest platform. Event details coming soon.",
+    description: "Vibrant Cultural Festival Experience",
   },
   alternates: {
-    canonical: "https://techlavya-rkmgec.com/"
+    canonical: "https://aikatan-rkmgec.com/"
   },
   icons: ["/techlavya-logo.png"]
 };
@@ -77,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${digitalFont.variable} ${kodeMonoFont.variable} ${brunoAceFont.variable} ${orbitronFont.variable} ${spaceGrotesk.variable} ${sora.variable} ${inter.variable} ${poppins.variable} antialiased w-full text-foreground bg-background font-inter`}
+        className={`${cinzelFont.variable} ${playfairFont.variable} ${dancingScriptFont.variable} ${outfitFont.variable} ${inter.variable} ${poppins.variable} antialiased w-full text-foreground bg-background font-inter`}
       >
         <ClientLayout>{children}</ClientLayout>
       </body>

@@ -29,14 +29,14 @@ const SponsorSection: React.FC = () => {
     >
       {/* Headline */}
       <div className="py-20 md:py-24">
-        <Title title="Sponsorship" className="from-accent to-highlight mb-0" />
+        <Title title="Partners & Sponsors" className="from-fest-gold to-fest-saffron mb-0" />
       </div>
 
-      <div className="rounded-2xl border border-amber-500/30 bg-black/30 backdrop-blur-sm p-8 md:p-12 text-center">
-        <p className="text-sm md:text-base uppercase tracking-[0.25em] text-amber-300/80 mb-3">
+      <div className="rounded-3xl border border-fest-gold/30 bg-black/40 backdrop-blur-md p-8 md:p-12 text-center shadow-lg">
+        <p className="text-sm md:text-base uppercase tracking-[0.25em] text-fest-gold/80 mb-3 font-outfit">
           Sponsorship Program
         </p>
-        <h2 className="text-2xl md:text-4xl font-bold font-Orbitron text-transparent bg-clip-text bg-gradient-to-r from-accent to-highlight">
+        <h2 className="text-2xl md:text-4xl font-bold font-cinzel text-transparent bg-clip-text bg-gradient-to-r from-fest-gold to-fest-saffron">
           Coming Soon
         </h2>
         <p className="mt-4 text-foreground/80 max-w-2xl mx-auto">

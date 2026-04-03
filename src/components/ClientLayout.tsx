@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+// import Footer from "@/components/Footer";
+// import Navbar from "@/components/Navbar";
 import Loader from "@/components/Loader";
 import SplashCursor from "@/components/SplashCursor";
 import BackgroundMusic from "@/components/BackgroundMusic";
@@ -62,9 +62,9 @@ export default function ClientLayout({
       ) : (
         <div className="relative z-10">
           <SplashCursor />
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
-          <Footer />
+          {/* <Footer /> */}
           {!lowPerformanceMode && <BackgroundMusic />}
         </div>
       )}
