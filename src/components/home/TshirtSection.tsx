@@ -46,7 +46,7 @@ const TshirtSection = () => {
                         className="space-y-3 md:space-y-4"
                     >
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-orbitron text-foreground tracking-wider">
-                            Techlavya <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Signature</span>
+                            Aikatan <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Signature</span>
                         </h1>
                         <p className="text-sm md:text-base text-muted-foreground font-spaceGrotesk tracking-widest uppercase">
                             Premium Gear Collection
@@ -123,7 +123,7 @@ const TshirtSection = () => {
                                 style={{ transform: "translateZ(50px)" }}
                             >
                                 <p className="text-[10px] md:text-xs font-kodeMono tracking-[0.3em] uppercase text-accent/70 mb-3">
-                                    Techlavya T-Shirt
+                                    Aikatan T-Shirt
                                 </p>
                                 <h3 className="text-3xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary tracking-wider">
                                     Coming Soon
@@ -134,7 +134,7 @@ const TshirtSection = () => {
 
                     {/* RIGHT: Action & Pricing */}
                     <div className="w-full lg:w-1/4 p-6 md:p-8 lg:p-10 bg-background/50 border-t lg:border-t-0 lg:border-l border-accent/10 flex flex-col justify-center order-3">
-                        <h2 className="text-muted-foreground font-kodeMono text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-2">TECHLAVYA / 202X</h2>
+                        <h2 className="text-muted-foreground font-kodeMono text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-2">AIKATAN / 202X</h2>
                         <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground mb-4 md:mb-6 font-orbitron tracking-wider">
                             The <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Core</span>
                         </h3>

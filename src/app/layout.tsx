@@ -47,21 +47,21 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Techlavya",
-  description: "Techlavya is the official premium tech festival of Ramkrishna Mahato Government Engineering College.",
+  title: "Aikatan",
+  description: "Aikatan is the official cultural fest platform of Ramkrishna Mahato Government Engineering College. Event details are coming soon.",
   keywords: [
-    "techlavya",
+    "aikatan",
     "rkmgec",
-    "tech fest",
-    "luxury tech",
+    "cultural fest",
+    "coming soon",
     "awwwards",
   ],
   metadataBase: new URL("https://techlavya-rkmgec.com/"),
   openGraph: {
-    title: "Techlavya",
+    title: "Aikatan",
     type: "website",
-    siteName: "Techlavya",
-    description: "Premium Tech Festival Experience",
+    siteName: "Aikatan",
+    description: "Official cultural fest platform. Event details coming soon.",
   },
   alternates: {
     canonical: "https://techlavya-rkmgec.com/"

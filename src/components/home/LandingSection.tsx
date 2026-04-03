@@ -32,7 +32,7 @@ const LandingSection = () => {
           >
             <h1 className="text-[2.75rem] sm:text-7xl md:text-9xl lg:text-[11rem] font-bold font-orbitron tracking-[-0.04em] leading-none select-none">
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/20">
-                TECHLAVYA
+                AIKATAN
               </span>
             </h1>
           </motion.div>
@@ -84,10 +84,10 @@ const LandingSection = () => {
           className="flex flex-col sm:flex-row gap-5 items-center justify-center w-full"
         >
           <Link
-            href="/#techlavya"
+            href="/#events"
             className="group relative px-10 py-4 bg-white text-black font-orbitron text-xs tracking-[0.2em] uppercase transition-all duration-300 hover:bg-primary hover:text-white rounded-full overflow-hidden"
           >
-            <span className="relative z-10">Explore Events</span>
+            <span className="relative z-10">Events Coming Soon</span>
             <motion.div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </Link>
         </motion.div>

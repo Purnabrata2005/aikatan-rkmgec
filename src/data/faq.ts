@@ -9,46 +9,46 @@ export const FAQData: FAQType[] = [
   {
     id: '1',
     category: 'General',
-    question: 'What is TECHLAVYA?',
-    answer: 'TECHLAVYA is the official tech fest of Ramkrishna Mahato Government Engineering College. It is a platform for students to showcase their technical skills through various competitions, workshops, and interactive events.'
+    question: 'What is AIKATAN?',
+    answer: 'AIKATAN is the official cultural fest platform of Ramkrishna Mahato Government Engineering College. Full event information is coming soon.'
   },
   {
     id: '2',
     category: 'General',
-    question: 'When and where will TECHLAVYA 2026 be held?',
-    answer: 'TECHLAVYA 2026 will be held at Ramkrishna Mahato Government Engineering College. Exact dates will be announced soon. Follow our website for updates!'
+    question: 'When and where will AIKATAN 2026 be held?',
+    answer: 'AIKATAN 2026 will be held at Ramkrishna Mahato Government Engineering College. Exact schedule details are coming soon.'
   },
   {
     id: '3',
     category: 'Registration',
     question: 'How do I register for events?',
-    answer: 'You can register for events directly through our website. Each event has a registration button with a Google Form link. Fill out the form and submit to secure your spot.'
+    answer: 'Registration details are coming soon.'
   },
   {
     id: '4',
     category: 'Registration',
     question: 'Can I register for multiple events?',
-    answer: 'Yes! You can participate in multiple events. Make sure to check the event schedules to avoid time conflicts.'
+    answer: 'Event registration updates are coming soon.'
   },
   
   {
     id: '5',
     category: 'Events',
     question: 'Do I need prior experience to participate?',
-    answer: 'Events are designed for different skill levels. Whether you are a beginner or an expert, there is something for everyone. Check event details for specific requirements.'
+    answer: 'Participation details are coming soon.'
   },
   {
     id: '6',
     category: 'Prizes',
     question: 'What are the prizes?',
-    answer: 'We offer exciting prizes including cash rewards, certificates, and merchandise. Prize details vary by event. Prize pool information will be updated soon.'
+    answer: 'Prize information is coming soon.'
   },
   
   {
     id: '7',
     category: 'General',
     question: 'Can non-college students participate?',
-    answer: 'Currently, TECHLAVYA is primarily for RKMGEC students. However, some events may be open to outside participants. Contact the organizers for more details.'
+    answer: 'Participation rules are coming soon.'
   },
   {
     id: '8',
