@@ -275,32 +275,20 @@ export const EsportsEventData: EventDataType[] = [
 ]
 
 
-type CulturalEventDataType = {
-  id: string;
-  title: string;
-  image: string;
-  buttonText: string;
-  prizePool: string;
-  time: string;
-  location: string;
-  contact: string;
-  lastDate: string;
-  registrationLink: string;
-}
-
-
-export const CulturalEventData: CulturalEventDataType[] = [
+export const CulturalEventData: EventDataType[] = [
   {
     id: uuidv4(),
     title: 'Rocking Twilight',
     image: '/events/cultural-event/twilight.webp',
     buttonText: 'Tap in Register',
     prizePool: 'Yet to be announced',
+    prize: 0,
     time: 'Yet to be announced',
     location: 'Yet to be announced',
     contact: 'Yet to be announced',
     lastDate: 'Yet to be announced',
-    registrationLink: ''
+    registrationLink: '',
+    type: 'techlavya'
   },
   {
     id: uuidv4(),
@@ -308,11 +296,13 @@ export const CulturalEventData: CulturalEventDataType[] = [
     image: '/events/cultural-event/octaves.webp',
     buttonText: 'Tap in Register',
     prizePool: 'Yet to be announced',
+    prize: 0,
     time: 'Yet to be announced',
     location: 'Yet to be announced',
     contact: 'Yet to be announced',
     lastDate: 'Yet to be announced',
-    registrationLink: ''
+    registrationLink: '',
+    type: 'techlavya'
   },
   {
     id: uuidv4(),
@@ -320,10 +310,40 @@ export const CulturalEventData: CulturalEventDataType[] = [
     image: '/events/cultural-event/highway.webp',
     buttonText: 'Tap in Register',
     prizePool: 'Yet to be announced',
+    prize: 0,
     time: 'Yet to be announced',
     location: 'Yet to be announced',
     contact: 'Yet to be announced',
     lastDate: 'Yet to be announced',
-    registrationLink: ''
+    registrationLink: '',
+    type: 'techlavya'
+  },
+  {
+    id: uuidv4(),
+    title: 'Symphony',
+    image: '/events/cultural-event/symphony.webp',
+    buttonText: 'Tap in Register',
+    prizePool: 'Yet to be announced',
+    prize: 0,
+    time: 'Yet to be announced',
+    location: 'Yet to be announced',
+    contact: 'Yet to be announced',
+    lastDate: 'Yet to be announced',
+    registrationLink: '',
+    type: 'techlavya'
+  },
+  {
+    id: uuidv4(),
+    title: 'Folk Lore',
+    image: '/events/cultural-event/symphony.webp',
+    buttonText: 'Tap in Register',
+    prizePool: 'Yet to be announced',
+    prize: 0,
+    time: 'Yet to be announced',
+    location: 'Yet to be announced',
+    contact: 'Yet to be announced',
+    lastDate: 'Yet to be announced',
+    registrationLink: '',
+    type: 'techlavya'
   }
 ]

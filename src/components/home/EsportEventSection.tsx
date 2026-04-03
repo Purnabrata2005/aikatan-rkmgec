@@ -22,7 +22,7 @@ const EsportsEventSection: React.FC = () => {
   };
 
   return (
-    <Container id="esports" title="Esport Events" titleClassName="from-primary to-accent">
+    <Container id="competitions" title="Competitions & Battles" titleClassName="from-fest-pink to-accent">
       {/* MOBILE LAYOUT */}
       <div className="relative md:hidden -mx-4 mb-10">
         {/* Interactive Swipe Indicator */}

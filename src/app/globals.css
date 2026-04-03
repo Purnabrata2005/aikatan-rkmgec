@@ -12,11 +12,11 @@
 
 body {
   background: 
-    radial-gradient(circle at 10% 20%, rgba(184, 92, 56, 0.05) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 70%, rgba(213, 206, 163, 0.05) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 50%, rgba(60, 42, 33, 0.2) 0%, transparent 50%),
-    #1A120B;
-  background-color: #1A120B;
+    radial-gradient(circle at 10% 20%, rgba(227, 74, 123, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(244, 121, 32, 0.15) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 50%, rgba(91, 18, 41, 0.3) 0%, transparent 50%),
+    #1C0718;
+  background-color: #1C0718;
   background-attachment: fixed;
   position: relative;
   overflow-x: hidden;
@@ -52,44 +52,44 @@ body::before {
 
 @layer base {
   :root {
-    /* Deep Tech Brown */
-    --background: 26 39% 7%;
-    --foreground: 0 0% 96%;
+    /* Deep Cultural Purple */
+    --background: 310 60% 7%;
+    --foreground: 40 80% 95%;
 
-    /* Dark Warm Brown */
-    --secondary-bg: 25 29% 15%;
+    /* Warm Maroon Background */
+    --secondary-bg: 345 67% 14%;
 
-    --card: 26 39% 7%;
-    --card-foreground: 0 0% 96%;
-    --popover: 26 39% 7%;
-    --popover-foreground: 0 0% 96%;
+    --card: 310 60% 7%;
+    --card-foreground: 40 80% 95%;
+    --popover: 310 60% 7%;
+    --popover-foreground: 40 80% 95%;
 
-    /* Interactive Accent Metallic Copper */
-    --primary: 19 53% 47%;
-    --primary-foreground: 0 0% 96%;
+    /* Vibrant Saffron */
+    --primary: 25 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 29% 15%;
-    --secondary-foreground: 0 0% 81%;
+    --secondary: 345 67% 14%;
+    --secondary-foreground: 40 80% 90%;
 
-    --muted: 25 29% 15%;
-    --muted-foreground: 0 0% 81%;
+    --muted: 345 67% 14%;
+    --muted-foreground: 40 40% 70%;
 
-    /* Soft Luxury Gold */
-    --accent: 44 38% 74%;
-    --accent-foreground: 26 39% 7%;
+    /* Festive Gold */
+    --accent: 43 60% 50%;
+    --accent-foreground: 310 60% 7%;
 
-    /* Highlight Cream Beige */
-    --highlight: 60 40% 85%;
-    --highlight-foreground: 26 39% 7%;
+    /* Soft Pink Highlighting */
+    --highlight: 340 70% 60%;
+    --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 29% 25%;
-    --input: 25 29% 25%;
-    --ring: 19 53% 47%;
+    --border: 345 40% 20%;
+    --input: 345 40% 20%;
+    --ring: 25 90% 55%;
     
-    --radius: 0.5rem;
+    --radius: 1rem;
   }
 }
 
@@ -104,18 +104,19 @@ body::before {
 }
 
 .black-gradient {
-  background: linear-gradient(135deg, #3C2A21 0%, #1A120B 100%);
+  background: linear-gradient(135deg, #5B1229 0%, #1C0718 100%);
 }
 
 .glass-morphism {
-  background: rgba(60, 42, 33, 0.4);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(213, 206, 163, 0.1);
+  background: rgba(91, 18, 41, 0.4);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(227, 74, 123, 0.15);
+  border-radius: var(--radius);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #D5CEA3, #E5E5CB, #B85C38);
+  background: linear-gradient(to right, #F47920, #E34A7B, #C69C38);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -126,8 +127,8 @@ body::before {
   transition: all 0.3s ease;
 }
 .glow-on-hover:hover {
-  box-shadow: 0 0 15px rgba(213, 206, 163, 0.4);
-  border-color: rgba(213, 206, 163, 0.5);
+  box-shadow: 0 0 20px rgba(244, 121, 32, 0.4);
+  border-color: rgba(244, 121, 32, 0.5);
 }
 
 .flip-card {

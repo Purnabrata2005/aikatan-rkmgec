@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import Container from "../Container";
-import { TechlavyaEventData } from "@/data/event-data";
+import { CulturalEventData } from "@/data/event-data";
 import dynamic from "next/dynamic";
 import "./TechlavyaEventSection.css";
 
@@ -27,7 +27,7 @@ const TechlavyaEventSection: React.FC = () => {
   return (
     <Container
       id="techlavya"
-      title="Techlavya Events"
+      title="Cultural Showcases"
       titleClassName="from-accent to-highlight"
     >
       {/* MOBILE LAYOUT */}
@@ -96,7 +96,7 @@ const TechlavyaEventSection: React.FC = () => {
           onScroll={handleScroll}
           className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-4 pb-4 scrollbar-hide relative"
         >
-          {TechlavyaEventData.map((event, index) => (
+          {CulturalEventData.map((event, index) => (
             <div
               key={event.id}
               className={`snap-center shrink-0 w-[86vw] max-w-[360px] ${
@@ -116,7 +116,7 @@ const TechlavyaEventSection: React.FC = () => {
 
       {/* DESKTOP LAYOUT */}
       <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center mb-10">
-        {TechlavyaEventData.map((event) => (
+        {CulturalEventData.map((event) => (
           <EventCard
             key={event.id}
             eventId={event.id}

@@ -28,22 +28,22 @@ const Footer: React.FC = () => {
                                 /> */}
                             </div>
                         </Link>
-                        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6 font-spaceGrotesk tracking-wide">
-                            Experience the pinnacle of technological innovation and luxury aesthetics at the ultimate tech fest. Join the revolution.
+                        <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6 font-outfit tracking-wide">
+                            Celebrate the colors, rhythm, and expression of our vibrant cultural heritage. Join the grandest festival of the year.
                         </p>
-                        <div className="inline-flex items-center gap-2 text-sm font-kodeMono tracking-widest text-accent/80 p-3 rounded-lg border border-accent/10 bg-secondary-bg/30">
-                            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-                            SYS.STATUS: <span className="text-primary font-bold">ONLINE</span>
+                        <div className="inline-flex items-center gap-2 text-sm font-playfair tracking-widest text-accent/80 p-3 rounded-lg border border-fest-pink/10 bg-secondary-bg/30">
+                            <span className="w-1.5 h-1.5 rounded-full bg-fest-pink animate-pulse" />
+                            FESTIVAL: <span className="text-fest-pink font-bold">LIVE</span>
                         </div>
                     </div>
 
                     {/* Middle: Links/Social */}
                     <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
-                        <h3 className="text-highlight font-orbitron tracking-widest text-lg font-bold mb-8">TRANSMISSIONS</h3>
+                        <h3 className="text-highlight font-cinzel tracking-widest text-lg font-bold mb-8">CONNECT</h3>
                         <div className="flex flex-col space-y-4">
-                            <Link href="mailto:techfest@rkmgec.ac.in" className="group flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors duration-300">
-                                <span className="font-kodeMono text-xs tracking-widest uppercase">Email</span>
-                                <span className="h-[1px] w-6 bg-accent/20 group-hover:w-12 group-hover:bg-primary/60 transition-all duration-500" />
+                            <Link href="mailto:culturalfest@rkmgec.ac.in" className="group flex items-center gap-3 text-muted-foreground hover:text-fest-pink transition-colors duration-300">
+                                <span className="font-outfit text-xs tracking-widest uppercase">Email</span>
+                                <span className="h-[1px] w-6 bg-accent/20 group-hover:w-12 group-hover:bg-fest-pink/60 transition-all duration-500" />
                             </Link>
                             <div className="flex gap-4 pt-4">
                                 <SocialLink href="https://www.facebook.com/share/16AmVp6gyk/" Icon={Facebook} />
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
 
                     {/* Right: Location */}
                     <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
-                        <h3 className="text-highlight font-orbitron tracking-widest text-lg font-bold mb-8">PHYSICAL_NODE</h3>
+                        <h3 className="text-highlight font-cinzel tracking-widest text-lg font-bold mb-8">VENUE</h3>
                         <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
                             Ramkrishna Mahato Government Engineering College,<br />
                             Agharpur, Purulia 723203
@@ -65,10 +65,10 @@ const Footer: React.FC = () => {
                             href="https://www.google.com/maps/place/Ram+Krishna+Mahato+Government+Engin…" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="inline-flex items-center justify-center gap-2 bg-secondary-bg/30 hover:bg-primary/10 border border-accent/20 hover:border-primary text-foreground hover:text-highlight px-6 py-3 rounded-xl transition-all duration-300 group shadow-lg shadow-black/20 font-kodeMono text-xs tracking-widest uppercase"
+                            className="inline-flex items-center justify-center gap-2 bg-secondary-bg/30 hover:bg-fest-pink/10 border border-accent/20 hover:border-fest-pink text-foreground hover:text-fest-pink px-6 py-3 rounded-xl transition-all duration-300 group shadow-lg shadow-black/20 font-inter text-xs tracking-widest uppercase"
                         >
-                            <MapPin className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
-                            Establish Route
+                            <MapPin className="w-4 h-4 text-fest-pink group-hover:scale-110 transition-transform" />
+                            Get Directions
                         </Link>
                     </div>
                 </div>
@@ -78,11 +78,11 @@ const Footer: React.FC = () => {
 
                 {/* Copyright */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-center md:text-left text-xs text-muted-foreground font-kodeMono tracking-[0.2em] uppercase">
-                        ©202X TECHLAVYA SYSTEM. ALL PROTOCOLS RESERVED.
+                    <p className="text-center md:text-left text-xs text-muted-foreground font-inter tracking-[0.2em] uppercase">
+                        ©2026 AIKATAN. ALL RIGHTS RESERVED.
                     </p>
-                    <p className="text-center md:text-right text-xs text-muted-foreground font-kodeMono tracking-widest flex items-center gap-1.5 uppercase">
-                        BUILT BY <span className="text-accent underline decoration-accent/30 underline-offset-4">TEAM AIKATAN</span>
+                    <p className="text-center md:text-right text-xs text-muted-foreground font-inter tracking-widest flex items-center gap-1.5 uppercase">
+                        BUILT BY <span className="text-fest-saffron underline decoration-fest-saffron/30 underline-offset-4">TEAM AIKATAN</span>
                     </p>
                 </div>
             </div>
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
 export default Footer;
 
 const SocialLink: React.FC<{ href: string; Icon: React.ElementType }> = ({ href, Icon }) => (
-    <Link href={href} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary-bg/40 border border-accent/20 hover:bg-primary/20 hover:border-primary/50 hover:shadow-[0_0_15px_rgba(184,92,56,0.3)] transition-all duration-300 group">
-        <Icon className="w-5 h-5 text-accent group-hover:text-primary transition-colors duration-300" />
+    <Link href={href} target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-secondary-bg/40 border border-fest-pink/20 hover:bg-fest-pink/20 hover:border-fest-pink/50 hover:shadow-[0_0_15px_rgba(227,74,123,0.3)] transition-all duration-300 group">
+        <Icon className="w-5 h-5 text-accent group-hover:text-fest-pink transition-colors duration-300" />
     </Link>
 );

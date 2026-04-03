@@ -45,11 +45,11 @@ const TshirtSection = () => {
                         viewport={{ once: true }}
                         className="space-y-3 md:space-y-4"
                     >
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-orbitron text-foreground tracking-wider">
-                            Techlavya <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Signature</span>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-cinzel text-foreground tracking-wider">
+                            Aikatan <span className="text-transparent bg-clip-text bg-gradient-to-r from-fest-gold to-fest-saffron">Collection</span>
                         </h1>
-                        <p className="text-sm md:text-base text-muted-foreground font-spaceGrotesk tracking-widest uppercase">
-                            Premium Gear Collection
+                        <p className="text-sm md:text-base text-muted-foreground font-outfit tracking-widest uppercase">
+                            Official Merchandise
                         </p>
                         <div className="flex justify-center">
                             <div className="h-1 w-16 bg-gradient-to-r from-accent to-primary rounded-full" />
@@ -73,8 +73,8 @@ const TshirtSection = () => {
                                 <Box className="text-primary w-6 h-6" />
                             </motion.div>
                             <div>
-                                <h4 className="text-accent/80 font-kodeMono tracking-[0.2em] text-[10px] uppercase mb-2">Item Class</h4>
-                                <p className="text-foreground font-orbitron text-lg font-bold tracking-widest">Premium Gear</p>
+                                <h4 className="text-accent/80 font-inter tracking-[0.2em] text-[10px] uppercase mb-2">Item Class</h4>
+                                <p className="text-foreground font-outfit text-lg font-bold tracking-widest">Festival Wear</p>
                             </div>
                             <div className="space-y-4">
                                 <motion.div
@@ -93,7 +93,7 @@ const TshirtSection = () => {
                         </div>
 
                         <div className="mt-12 lg:mt-0">
-                            <span className="text-4xl lg:text-5xl font-bold font-kodeMono text-accent/10 select-none tracking-widest">#02X</span>
+                            <span className="text-4xl lg:text-5xl font-bold font-outfit text-accent/10 select-none tracking-widest">2026</span>
                         </div>
                     </div>
 
@@ -122,10 +122,10 @@ const TshirtSection = () => {
                                 className="relative z-10 rounded-2xl border border-accent/25 bg-black/40 backdrop-blur-sm px-8 py-10 md:px-12 md:py-14 text-center shadow-[0_0_40px_rgba(213,206,163,0.12)]"
                                 style={{ transform: "translateZ(50px)" }}
                             >
-                                <p className="text-[10px] md:text-xs font-kodeMono tracking-[0.3em] uppercase text-accent/70 mb-3">
-                                    Techlavya T-Shirt
+                                <p className="text-[10px] md:text-xs font-inter tracking-[0.3em] uppercase text-accent/70 mb-3">
+                                    Festival T-Shirt
                                 </p>
-                                <h3 className="text-3xl md:text-5xl font-bold font-orbitron text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary tracking-wider">
+                                <h3 className="text-3xl md:text-5xl font-bold font-cinzel text-transparent bg-clip-text bg-gradient-to-r from-fest-gold to-fest-saffron tracking-wider">
                                     Coming Soon
                                 </h3>
                             </motion.div>
@@ -134,13 +134,13 @@ const TshirtSection = () => {
 
                     {/* RIGHT: Action & Pricing */}
                     <div className="w-full lg:w-1/4 p-6 md:p-8 lg:p-10 bg-background/50 border-t lg:border-t-0 lg:border-l border-accent/10 flex flex-col justify-center order-3">
-                        <h2 className="text-muted-foreground font-kodeMono text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-2">TECHLAVYA / 202X</h2>
-                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground mb-4 md:mb-6 font-orbitron tracking-wider">
-                            The <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary">Core</span>
+                        <h2 className="text-muted-foreground font-inter text-[9px] md:text-[10px] tracking-[0.3em] uppercase mb-2">FESTIVAL / 2026</h2>
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground mb-4 md:mb-6 font-cinzel tracking-wider">
+                            The <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-fest-gold to-fest-saffron">Aesthetic</span>
                         </h3>
 
                         <p className="text-muted-foreground text-xs md:text-sm font-inter leading-relaxed mb-6 md:mb-8">
-                            Custom-engineered fit for the modern innovator. Features a breathable blend with metallic copper-infused aesthetics.
+                            Premium cotton blend with traditional motif prints. Embrace the festive vibe with our official apparel.
                         </p>
 
                         <div className="space-y-6">
@@ -152,9 +152,9 @@ const TshirtSection = () => {
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full h-12 md:h-14 bg-primary/10 hover:bg-primary/20 border border-primary text-primary font-kodeMono font-bold text-[10px] md:text-xs tracking-widest uppercase transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(184,92,56,0.15)] hover:shadow-[0_0_25px_rgba(184,92,56,0.3)] backdrop-blur-sm"
+                                className="w-full h-12 md:h-14 bg-fest-pink/10 hover:bg-fest-pink/20 border border-fest-pink text-fest-pink font-outfit font-bold text-[10px] md:text-xs tracking-widest uppercase transition-all flex items-center justify-center gap-2 group shadow-[0_0_15px_rgba(227,74,123,0.15)] hover:shadow-[0_0_25px_rgba(227,74,123,0.3)] backdrop-blur-sm"
                             >
-                                Initialize
+                                Pre-order Now
                                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </motion.button>
                         </div>

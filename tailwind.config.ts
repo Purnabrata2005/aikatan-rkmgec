@@ -14,12 +14,10 @@ const config: Config = {
 				'xs': '450px'
 			},
 			fontFamily: {
-				digital: ['var(--font-digital)'],
-				kodeMono: ['var(--font-kode-mono)'],
-				burnoAce: ['var(--font-bruno-ace)'],
-				orbitron: ['var(--font-orbitron)'],
-				spaceGrotesk: ['var(--font-space-grotesk)'],
-				sora: ['var(--font-sora)'],
+				cinzel: ['var(--font-cinzel)'],
+				playfair: ['var(--font-playfair)'],
+				dancingScript: ['var(--font-dancing-script)'],
+				outfit: ['var(--font-outfit)'],
 				inter: ['var(--font-inter)'],
 				poppins: ['var(--font-poppins)'],
 			},
@@ -69,9 +67,11 @@ const config: Config = {
 					'4': 'hsl(var(--chart-4))',
 					'5': 'hsl(var(--chart-5))'
 				},
-				"custom-gold-1": "#6d3416",
-				"custom-gold-2": "#7b603c",
-				"custom-gold-3": "#593b19",
+				"fest-maroon": "#5B1229",
+				"fest-saffron": "#F47920",
+				"fest-gold": "#C69C38",
+				"fest-pink": "#E34A7B",
+				"fest-purple": "#3B1143",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
