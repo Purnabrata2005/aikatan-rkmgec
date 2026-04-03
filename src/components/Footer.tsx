@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                             </div>
                         </Link>
                         <p className="text-muted-foreground text-sm leading-relaxed max-w-sm mb-6 font-spaceGrotesk tracking-wide">
-                            Experience the pinnacle of technological innovation and luxury aesthetics at the ultimate tech fest. Join the revolution.
+                            Aikatan is our cultural fest platform. Full event details are coming soon.
                         </p>
                         <div className="inline-flex items-center gap-2 text-sm font-kodeMono tracking-widest text-accent/80 p-3 rounded-lg border border-accent/10 bg-secondary-bg/30">
                             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
@@ -79,7 +79,7 @@ const Footer: React.FC = () => {
                 {/* Copyright */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-center md:text-left text-xs text-muted-foreground font-kodeMono tracking-[0.2em] uppercase">
-                        ©202X TECHLAVYA SYSTEM. ALL PROTOCOLS RESERVED.
+                        ©202X AIKATAN SYSTEM. ALL PROTOCOLS RESERVED.
                     </p>
                     <p className="text-center md:text-right text-xs text-muted-foreground font-kodeMono tracking-widest flex items-center gap-1.5 uppercase">
                         BUILT BY <span className="text-accent underline decoration-accent/30 underline-offset-4">TEAM AIKATAN</span>
