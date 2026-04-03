@@ -39,8 +39,8 @@ const Navbar = () => {
     },
     {
       icon: <Compass size={18} />,
-      text: "Events",
-      navigateTo: "/#techlavya",
+      text: "Events Soon",
+      navigateTo: "/#events",
     },
 
     { icon: <Images size={18} />, text: "Gallery", navigateTo: "/#gallery" },

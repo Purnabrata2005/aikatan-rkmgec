@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React from "react";
 import Container from "../Container";
 import { CulturalEventData } from "@/data/event-data";
 import dynamic from "next/dynamic";
@@ -24,6 +24,7 @@ const TechlavyaEventSection: React.FC = () => {
     }
   };
 
+const AikatanEventSection: React.FC = () => {
   return (
     <Container
       id="techlavya"
@@ -130,4 +131,4 @@ const TechlavyaEventSection: React.FC = () => {
   );
 };
 
-export default TechlavyaEventSection;
+export default AikatanEventSection;

@@ -14,8 +14,7 @@ const MenuSections = [
      {
           title: "Events",
           items: [
-               { icon: <PartyPopper size={18} className="text-purple-400" />, text: "Techlavya", navigateTo: "/#techlavya" },
-               { icon: <PartyPopper size={18} className="text-green-400" />, text: "Esports", navigateTo: "/#esports" },
+               { icon: <PartyPopper size={18} className="text-purple-400" />, text: "Aikatan (Coming Soon)", navigateTo: "/#events" },
           ],
      },
      {
