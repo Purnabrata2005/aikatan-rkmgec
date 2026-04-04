@@ -10,8 +10,6 @@ import TshirtSection from '@/components/home/TshirtSection'
 const Home = () => {
   return (
     <div className="relative">
-      <div className="absolute inset-0 -z-10 bg-black/60 pointer-events-none"></div>
-      <div className="absolute inset-0 -z-10 bg-black/40 pointer-events-none"></div>
       <LandingSection />
       <TimelineSection />
       <TechlavyaEventSection />

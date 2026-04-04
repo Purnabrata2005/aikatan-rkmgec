@@ -16,7 +16,7 @@ const LandingSection = () => {
           >
             <h1 className="text-[3rem] sm:text-7xl md:text-9xl lg:text-[10rem] font-bold font-cinzel tracking-tight leading-none select-none">
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-fest-saffron via-fest-gold to-white/30 uppercase">
-                AIKATAN
+                ঐকtan
               </span>
             </h1>
           </motion.div>
