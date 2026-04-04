@@ -8,22 +8,7 @@ const LandingSection = () => {
   return (
     <div className="relative min-h-screen w-full flex items-center justify-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 sm:px-6 flex flex-col items-center justify-center text-center">
-        {/* Status Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-6 sm:mb-8 max-w-full flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fest-pink opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-fest-pink"></span>
-          </span>
-          <span className="text-[10px] sm:text-[11px] font-playfair uppercase tracking-[0.2em] sm:tracking-[0.3em] text-accent/90 whitespace-nowrap">
-            Culture Unleashed 2026
-          </span>
-        </motion.div>
-
-        <div className="relative mb-6 sm:mb-8">
+        <div className="relative mb-6 sm:mb-8 pt-20">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -31,7 +16,7 @@ const LandingSection = () => {
           >
             <h1 className="text-[3rem] sm:text-7xl md:text-9xl lg:text-[10rem] font-bold font-cinzel tracking-tight leading-none select-none">
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-fest-saffron via-fest-gold to-white/30 uppercase">
-                AIKATAN
+                ঐকtan
               </span>
             </h1>
           </motion.div>
@@ -42,7 +27,8 @@ const LandingSection = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="mt-3 sm:mt-2 text-base sm:text-2xl md:text-4xl lg:text-6xl font-dancingScript tracking-widest text-highlight/90"
           >
-            Where Culture <span className="text-primary font-bold">Comes Alive</span>
+            Where Culture{" "}
+            <span className="text-primary font-bold">Comes Alive</span>
           </motion.div>
         </div>
 
