@@ -1,13 +1,22 @@
+import EsportsEventSection from '@/components/home/EsportEventSection'
+import FAQSection from '@/components/home/FAQSection'
+import GalllerySection from '@/components/home/GalllerySection'
+import LandingSection from '@/components/home/LandingSection'
+import SponsorSection from '@/components/home/SponsorSection'
+import TechlavyaEventSection from '@/components/home/TechlavyaEventSection'
+import TimelineSection from '@/components/home/TimelineSection'
+import TshirtSection from '@/components/home/TshirtSection'
+
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black px-6 text-center text-white">
-      <div className="max-w-xl space-y-4">
-        <p className="text-sm uppercase tracking-[0.4em] text-white/60">Aikatan</p>
-        <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">Coming Soon</h1>
-        <p className="text-base text-white/70 sm:text-lg">
-          We’re preparing something new. Check back soon for the full experience.
-        </p>
-      </div>
+    <div className="relative">
+      <LandingSection />
+      <TimelineSection />
+      <TechlavyaEventSection />
+      <TshirtSection />
+      <GalllerySection />
+      <FAQSection />
+      <SponsorSection />
     </div>
   )
 }
