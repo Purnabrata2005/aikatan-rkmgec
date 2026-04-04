@@ -7,7 +7,7 @@ interface CalendarEvent {
   date: number;
   month: number;
   title: string;
-  type: "tech" | "esports" | "holiday";
+  type: "tech" | "esports" | "holiday" | "cultural";
   startTime?: string;
   endTime?: string;
   description?: string;
@@ -21,7 +21,7 @@ interface ScheduleCardProps {
 export const ScheduleCard: React.FC<ScheduleCardProps> = ({ events }) => {
   return (
     <div className="w-full">
-      <CalendarView month={3} year={2026} events={events} allEvents={events} />
+      <CalendarView month={4} year={2026} events={events} allEvents={events} />
     </div>
   );
 };

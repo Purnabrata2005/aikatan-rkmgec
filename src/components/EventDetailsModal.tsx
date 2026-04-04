@@ -1,12 +1,12 @@
 "use client"
 
 import React, { useMemo } from "react";
-import { X, MapPin, Clock, Zap, Gamepad2, Terminal, Sun } from "lucide-react";
+import { X, MapPin, Clock, Zap, Gamepad2, Terminal, Sun, Sparkles } from "lucide-react";
 
 interface Event {
   date: number;
   title: string;
-  type: "tech" | "esports" | "holiday";
+  type: "tech" | "esports" | "holiday" | "cultural";
   month: number;
   startTime?: string;
   endTime?: string;
@@ -23,10 +23,8 @@ interface EventDetailsModalProps {
 }
 
 const FESTIVAL_LABELS: Record<string, string> = {
-  "29-3": "DAY_00",
-  "30-3": "DAY_01",
-  "1-4": "DAY_02",
-  "2-4": "DAY_03",
+  "15-4": "DAY_01",
+  "16-4": "DAY_02",
 };
 
 // Enhanced type config with terminal-style elements
@@ -66,6 +64,18 @@ const typeConfig = {
     badge: "bg-highlight/10 text-highlight border-highlight/50 shadow-[0_0_10px_rgba(224,216,180,0.3)]",
     icon: Sun,
     label: "SYS.HOLIDAY",
+  },
+  cultural: {
+    bg: "bg-emerald-500/5",
+    border: "border-emerald-400/40 hover:border-emerald-300",
+    glow: "hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]",
+    text: "text-emerald-300",
+    accent: "text-emerald-300",
+    dot: "bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.9)]",
+    line: "from-emerald-300/80",
+    badge: "bg-emerald-300/10 text-emerald-300 border-emerald-300/50 shadow-[0_0_10px_rgba(110,231,183,0.25)]",
+    icon: Sparkles,
+    label: "SYS.CULTURAL",
   },
 };
 
@@ -306,7 +316,7 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
           {/* Footer */}
           <div className="px-6 py-4 border-t border-accent/30 bg-accent/5 flex flex-col md:flex-row items-center justify-between gap-4 relative">
             <div className="flex items-center gap-6">
-              {(["tech", "esports", "holiday"] as const).map((type) => {
+              {(["cultural"] as const).map((type) => {
                 const config = typeConfig[type];
                 const count = dayEvents.filter((e) => e.type === type).length;
                 if (count === 0) return null;

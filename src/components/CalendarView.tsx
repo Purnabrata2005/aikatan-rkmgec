@@ -9,7 +9,7 @@ interface CalendarEvent {
   date: number;
   month: number;
   title: string;
-  type: "tech" | "esports" | "holiday";
+  type: "tech" | "esports" | "holiday" | "cultural";
   startTime?: string;
   endTime?: string;
   description?: string;
@@ -32,10 +32,8 @@ interface MobileTimelineEntry {
 }
 
 const FESTIVAL_DATES = [
-  { date: 29, month: 3, label: "PHASE 0" },
-  { date: 30, month: 3, label: "PHASE 1" },
-  { date: 1, month: 4, label: "PHASE 2" },
-  { date: 2, month: 4, label: "PHASE 3" },
+  { date: 15, month: 4, label: "DAY 1" },
+  { date: 16, month: 4, label: "DAY 2" },
 ];
 
 export const CalendarView: React.FC<CalendarViewProps> = ({
@@ -78,14 +76,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
       });
     });
 
-    // 2. Attach non-holiday events only to phase dates
+    // 2. Attach events to festival dates
     events.forEach((e) => {
       const key = `${e.date}-${e.month}`;
       const existing = combinedMap.get(key);
       if (existing) {
-        if (e.type !== "holiday") {
-          existing.events.push(e);
-        }
+        existing.events.push(e);
       }
     });
 
@@ -125,6 +121,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
         dot: "bg-amber-300 shadow-[0_0_10px_rgba(252,211,77,0.9)]",
         glow: "drop-shadow-[0_0_8px_rgba(252,211,77,0.6)]",
         border: "border-amber-300/50",
+      },
+      cultural: {
+        color: "text-emerald-300",
+        dot: "bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.9)]",
+        glow: "drop-shadow-[0_0_8px_rgba(110,231,183,0.6)]",
+        border: "border-emerald-300/50",
       },
     };
     return (
@@ -178,7 +180,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({
           
           {/* Legend / Stats */}
           <div className="flex flex-wrap justify-center lg:justify-end gap-3 sm:gap-6 items-center border border-white/10 bg-black/40 backdrop-blur-md px-5 py-3 rounded-xl sm:rounded-full shadow-2xl w-full lg:w-auto">
-            {['tech', 'esports', 'holiday'].map(type => {
+            {["cultural"].map(type => {
               const styles = getEventStyles(type);
               return (
                 <div key={type} className="flex items-center gap-2">
