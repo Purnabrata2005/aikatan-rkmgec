@@ -39,7 +39,7 @@ const Navbar = () => {
     },
     {
       icon: <Compass size={18} />,
-      text: "Events Soon",
+      text: "Events",
       navigateTo: "/#events",
     },
 

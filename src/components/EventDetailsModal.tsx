@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useMemo } from "react";
-import { X, MapPin, Clock, Zap, Gamepad2, Terminal, Sun, Sparkles } from "lucide-react";
+import { X, MapPin, Clock, Zap, Gamepad2, Sun, Sparkles, Music, Star, Calendar } from "lucide-react";
 
 interface Event {
   date: number;
@@ -23,59 +23,59 @@ interface EventDetailsModalProps {
 }
 
 const FESTIVAL_LABELS: Record<string, string> = {
-  "15-4": "DAY_01",
-  "16-4": "DAY_02",
+  "15-4": "Day 1",
+  "16-4": "Day 2",
 };
 
-// Enhanced type config with terminal-style elements
+// Warm & Elegant Cultural Fest Vibe Configuration
 const typeConfig = {
   tech: {
-    bg: "bg-primary/5",
-    border: "border-primary/40 hover:border-primary",
-    glow: "hover:shadow-[0_0_25px_var(--primary)]",
-    text: "text-primary",
-    accent: "text-primary",
-    dot: "bg-primary shadow-[0_0_10px_var(--primary)]",
-    line: "from-primary/80",
-    badge: "bg-primary/10 text-primary border-primary/50 shadow-[0_0_10px_rgba(184,92,56,0.3)]",
+    bg: "bg-blue-900/10",
+    border: "border-blue-500/30 hover:border-blue-400",
+    glow: "hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]",
+    text: "text-blue-300",
+    accent: "text-blue-400",
+    dot: "bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.8)]",
+    line: "from-blue-400/80",
+    badge: "bg-blue-900/30 text-blue-300 border-blue-500/30 shadow-[0_0_10px_rgba(59,130,246,0.2)]",
     icon: Zap,
-    label: "SYS.TECH",
+    label: "Tech Event",
   },
   esports: {
-    bg: "bg-accent/5",
-    border: "border-accent/40 hover:border-accent",
-    glow: "hover:shadow-[0_0_25px_var(--accent)]",
-    text: "text-highlight",
-    accent: "text-accent",
-    dot: "bg-accent shadow-[0_0_10px_var(--accent)]",
-    line: "from-accent/80",
-    badge: "bg-accent/10 text-highlight border-accent/50 shadow-[0_0_10px_rgba(213,206,163,0.3)]",
+    bg: "bg-fest-purple/10",
+    border: "border-fest-purple/40 hover:border-fest-purple",
+    glow: "hover:shadow-[0_0_25px_rgba(192,132,252,0.3)]",
+    text: "text-purple-300",
+    accent: "text-purple-400",
+    dot: "bg-purple-400 shadow-[0_0_10px_rgba(192,132,252,0.8)]",
+    line: "from-purple-400/80",
+    badge: "bg-fest-purple/30 text-purple-300 border-fest-purple/50 shadow-[0_0_10px_rgba(192,132,252,0.2)]",
     icon: Gamepad2,
-    label: "SYS.ESPORTS",
+    label: "Esports",
   },
   holiday: {
-    bg: "bg-highlight/5",
-    border: "border-highlight/40 hover:border-highlight",
-    glow: "hover:shadow-[0_0_25px_var(--highlight)]",
-    text: "text-highlight",
-    accent: "text-highlight",
-    dot: "bg-highlight shadow-[0_0_10px_var(--highlight)]",
-    line: "from-highlight/80",
-    badge: "bg-highlight/10 text-highlight border-highlight/50 shadow-[0_0_10px_rgba(224,216,180,0.3)]",
+    bg: "bg-fest-gold/10",
+    border: "border-fest-gold/40 hover:border-fest-gold",
+    glow: "hover:shadow-[0_0_25px_rgba(198,156,56,0.3)]",
+    text: "text-fest-gold",
+    accent: "text-fest-gold",
+    dot: "bg-fest-gold shadow-[0_0_10px_rgba(198,156,56,0.8)]",
+    line: "from-fest-gold/80",
+    badge: "bg-fest-gold/10 text-fest-gold border-fest-gold/50 shadow-[0_0_10px_rgba(198,156,56,0.2)]",
     icon: Sun,
-    label: "SYS.HOLIDAY",
+    label: "Holiday",
   },
   cultural: {
-    bg: "bg-emerald-500/5",
-    border: "border-emerald-400/40 hover:border-emerald-300",
-    glow: "hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]",
-    text: "text-emerald-300",
-    accent: "text-emerald-300",
-    dot: "bg-emerald-300 shadow-[0_0_10px_rgba(110,231,183,0.9)]",
-    line: "from-emerald-300/80",
-    badge: "bg-emerald-300/10 text-emerald-300 border-emerald-300/50 shadow-[0_0_10px_rgba(110,231,183,0.25)]",
-    icon: Sparkles,
-    label: "SYS.CULTURAL",
+    bg: "bg-fest-pink/10",
+    border: "border-fest-pink/40 hover:border-fest-pink",
+    glow: "hover:shadow-[0_0_25px_rgba(227,74,123,0.3)]",
+    text: "text-fest-pink",
+    accent: "text-fest-pink",
+    dot: "bg-fest-pink shadow-[0_0_10px_rgba(227,74,123,0.8)]",
+    line: "from-fest-pink/80",
+    badge: "bg-fest-pink/10 text-fest-pink border-fest-pink/50 shadow-[0_0_10px_rgba(227,74,123,0.2)]",
+    icon: Music,
+    label: "Cultural",
   },
 };
 
@@ -129,79 +129,67 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 bg-black/90 backdrop-blur-md z-[999] flex items-center justify-center p-3 md:p-6 overflow-hidden font-kodeMono"
+      className="fixed inset-0 bg-black/80 backdrop-blur-md z-[999] flex items-center justify-center p-3 md:p-6 overflow-hidden font-inter"
       onClick={onClose}
     >
-      {/* Tech Grid Background Overlay */}
-      <div className="absolute inset-0 tech-grid opacity-20 pointer-events-none" />
-
       <div
-        className="relative w-full max-w-4xl max-h-[92vh] flex flex-col border border-accent/30 bg-black/80 shadow-[0_0_40px_rgba(0,0,0,0.8)] cyber-clip"
+        className="relative w-full max-w-4xl max-h-[92vh] flex flex-col border border-fest-gold/20 rounded-3xl bg-gradient-to-b from-[#1C0718] to-[#020617] shadow-[0_0_50px_rgba(227,74,123,0.15)]"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Animated Scanline */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden cyber-clip">
-          <div className="w-full h-2 bg-accent/20 blur-[2px] animate-scanline" />
+        {/* Soft Glow Background Overlay */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-3xl">
+          <div className="absolute -top-40 -right-40 w-96 h-96 bg-fest-pink/10 blur-[100px] rounded-full" />
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-fest-saffron/10 blur-[100px] rounded-full" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col max-h-[92vh] overflow-hidden">
+        <div className="relative z-10 flex flex-col max-h-[92vh] overflow-hidden rounded-3xl">
           {/* Header */}
-          <div className="px-6 pt-6 pb-5 border-b border-accent/30 bg-accent/5 relative">
-            {/* Decorative corner brackets */}
-            <div className="absolute top-2 left-2 w-4 h-4 border-t-2 border-l-2 border-accent/60" />
-            <div className="absolute top-2 right-2 w-4 h-4 border-t-2 border-r-2 border-accent/60" />
-
+          <div className="px-6 pt-8 pb-6 border-b border-fest-gold/10 relative">
             <div className="flex items-start justify-between gap-3">
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                  <Terminal className="w-4 h-4 text-accent animate-pulse" />
+                <div className="flex items-center gap-3 mb-3">
+                  <Star className="w-5 h-5 text-fest-gold animate-pulse" />
                   {festivalLabel && (
-                    <span className="px-3 py-1 text-[11px] font-bold tracking-widest bg-accent text-black uppercase">
-                      [{festivalLabel}]
+                    <span className="px-4 py-1 text-xs font-semibold tracking-widest bg-gradient-to-r from-fest-saffron to-fest-pink text-white rounded-full uppercase shadow-md">
+                      {festivalLabel}
                     </span>
                   )}
-                  <span className="px-3 py-1 text-[10px] font-medium text-accent border border-accent/30 uppercase tracking-widest bg-black/50">
-                    <span className="text-primary mr-1">{dayEvents.length}</span> 
-                    PROTOCOLS_FOUND
+                  <span className="px-3 py-1 text-xs font-medium text-fest-gold border border-fest-gold/30 rounded-full tracking-widest bg-fest-gold/5">
+                    <span className="text-fest-saffron mr-1 font-bold">{dayEvents.length}</span> 
+                    Event{dayEvents.length !== 1 ? 's' : ''} Scheduled
                   </span>
                 </div>
-                <h2 className="text-xl md:text-3xl font-bold text-highlight font-orbitron tracking-[0.2em] flex items-center mt-2">
-                  {/* Blinking cursor effect next to title */}
-                  <span className="text-accent mr-2">{">"}</span>
-                  {dateStr.toUpperCase()}
-                  <span className="inline-block w-3 md:w-4 h-6 md:h-8 bg-accent ml-3 animate-pulse" />
+                <h2 className="text-2xl md:text-4xl font-bold font-cinzel text-transparent bg-clip-text bg-gradient-to-r from-fest-gold via-white to-fest-pink tracking-wider flex items-center mt-2 decoration-slice">
+                  {dateStr}
                 </h2>
-                <p className="text-xs text-accent/60 mt-3 tracking-widest uppercase flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <p className="text-sm font-outfit text-white/60 mt-3 tracking-wider uppercase flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-fest-saffron animate-pulse" />
                   {dayEvents.filter((e) => e.startTime).length > 0
-                    ? `SYS_UPTIME: ${formatTime(timeRange.start)} — ${formatTime(timeRange.end)}`
-                    : "GLOBAL OVERRIDE ACTIVE"}
+                    ? `Fest Hours: ${formatTime(timeRange.start)} — ${formatTime(timeRange.end)}`
+                    : "All Day Celebration"}
                 </p>
               </div>
               <button
                 type="button"
                 title="Close modal"
                 onClick={onClose}
-                className="p-2 bg-black border border-accent/30 hover:border-accent hover:bg-accent/20 transition-all duration-300 group relative overflow-hidden"
+                className="p-2 md:p-3 bg-white/5 border border-white/10 hover:border-fest-pink hover:bg-fest-pink/10 hover:text-fest-pink rounded-full transition-all duration-300 group"
               >
-                <div className="absolute inset-0 bg-accent/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                <X className="w-5 h-5 text-accent relative z-10" />
+                <X className="w-5 h-5 text-white/70 group-hover:text-fest-pink transition-colors" />
               </button>
             </div>
           </div>
 
           {/* Timeline Body */}
-          <div className="flex-1 overflow-y-auto overscroll-contain px-2 md:px-8 py-8 cyber-scrollbar bg-black/40">
+          <div className="flex-1 overflow-y-auto overscroll-contain px-2 md:px-8 py-8 custom-scrollbar relative">
             {dayEvents.length > 0 ? (
               <div className="relative pl-6 md:pl-10">
-                {/* Central timeline line - made harsher/neon */}
-                <div className="absolute left-[95px] md:left-[115px] top-0 bottom-0 w-[2px] bg-accent/20">
-                  <div className="absolute top-0 w-full h-1/3 bg-gradient-to-b from-transparent via-accent to-transparent animate-pulse" />
-                </div>
+                {/* Elegant Central timeline line */}
+                <div className="absolute left-[95px] md:left-[115px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-fest-gold/40 via-fest-pink/20 to-transparent" />
 
                 {/* Events */}
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {dayEvents.map((event, index) => {
                     const config = typeConfig[event.type];
                     const Icon = config.icon;
@@ -218,77 +206,77 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
                         className="relative flex items-stretch gap-6 md:gap-8 group"
                       >
                         {/* Time column */}
-                        <div className="flex-shrink-0 w-[60px] md:w-[75px] flex flex-col items-end justify-start pt-3">
+                        <div className="flex-shrink-0 w-[60px] md:w-[75px] flex flex-col items-end justify-start pt-3 font-outfit">
                           {event.startTime ? (
                             <>
-                              <span className="text-sm font-bold text-accent tracking-widest leading-tight bg-black px-1">
+                              <span className="text-sm md:text-base font-semibold text-white/90 tracking-wider">
                                 {formatTime(event.startTime).replace(" ", "")}
                               </span>
-                              <span className="text-[10px] text-accent/50 tracking-wider mt-1">
+                              <span className="text-[11px] text-white/50 tracking-wider mt-1">
                                 {formatTime(event.endTime || event.startTime).replace(" ", "")}
                               </span>
-                              <span className="text-[9px] text-primary/70 tracking-widest mt-2 border-b border-primary/30 pb-1">
-                                DUR: {duration >= 60 ? `${Math.floor(duration / 60)}H${duration % 60 ? ` ${duration % 60}M` : ""}` : `${duration}M`}
+                              <span className="text-[10px] text-fest-gold/70 tracking-widest mt-3 rounded-full border border-fest-gold/20 px-2 py-0.5">
+                                {duration >= 60 ? `${Math.floor(duration / 60)}h${duration % 60 ? ` ${duration % 60}m` : ""}` : `${duration}m`}
                               </span>
                             </>
                           ) : (
-                            <span className="text-[10px] text-accent/60 tracking-widest border border-accent/20 px-2 py-1 bg-black">ALL_DAY</span>
+                            <span className="text-[11px] text-fest-gold/80 tracking-widest border border-fest-gold/30 rounded-full px-3 py-1 bg-fest-gold/5">ALL DAY</span>
                           )}
                         </div>
 
                         {/* Timeline dot */}
-                        <div className="relative flex-shrink-0 w-4 flex flex-col items-center pt-[15px]">
-                          <div className={`w-3 h-3 rounded-none rotate-45 ${config.dot} z-10 group-hover:scale-125 group-hover:rotate-90 transition-all duration-300`} />
+                        <div className="relative flex-shrink-0 w-4 flex flex-col items-center pt-[18px]">
+                          <div className={`w-3.5 h-3.5 rounded-full outline outline-2 outline-offset-2 outline-transparent group-hover:outline-${event.type === 'tech' ? 'blue-400/50' : 'fest-pink/50'} ${config.dot} z-10 group-hover:scale-125 transition-all duration-500`} />
                         </div>
 
                         {/* Event card */}
                         <div
-                          className={`flex-1 ${config.bg} ${config.border} border-l-4 border-y border-r p-5 ${minH} transition-all duration-300 ${config.glow} group-hover:-translate-x-1 relative overflow-hidden bg-black/60 backdrop-blur-sm`}
+                          className={`flex-1 ${config.bg} ${config.border} border rounded-2xl p-5 md:p-6 ${minH} transition-all duration-500 ${config.glow} shadow-sm relative overflow-hidden backdrop-blur-sm group-hover:-translate-y-1 hover:bg-white/5`}
                         >
-                          {/* Inner code decor */}
-                          <div className="absolute top-0 right-0 px-2 py-1 bg-black/50 border-b border-l border-accent/20 text-[8px] text-accent/40 tracking-[0.3em] pointer-events-none">
-                            PID: {Math.floor(Math.random() * 9000) + 1000}_{index.toString().padStart(2, "0")}
-                          </div>
-
+                          <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                          
                           {/* Top row: badge + icon */}
-                          <div className="flex items-center justify-between mb-3">
+                          <div className="flex items-center justify-between mb-4">
                             <span
-                              className={`${config.badge} text-[10px] px-2 py-1 border font-bold tracking-widest`}
+                              className={`${config.badge} text-[11px] px-3 py-1 rounded-full font-medium tracking-wider uppercase font-outfit inline-flex items-center gap-1.5`}
                             >
-                              {">_ "}{config.label}
+                              <Icon className="w-3 h-3" />
+                              {config.label}
                             </span>
-                            <Icon className={`w-5 h-5 ${config.accent} opacity-80 group-hover:animate-pulse`} />
+                            <div className="text-white/20 group-hover:text-white/40 transition-colors italic font-serif text-sm px-2">
+                              No. {(index + 1).toString().padStart(2, "0")}
+                            </div>
                           </div>
 
                           {/* Title */}
                           <h3
-                            className={`text-lg md:text-xl font-bold ${config.text} mb-2 leading-tight font-orbitron tracking-wide uppercase`}
+                            className={`text-xl md:text-2xl font-bold ${config.text} mb-3 font-cinzel tracking-wide leading-snug drop-shadow-sm group-hover:text-white transition-colors duration-300`}
                           >
                             {event.title}
                           </h3>
 
                           {/* Description */}
                           {event.description && (
-                            <p className="text-xs text-accent/70 leading-relaxed mb-4 line-clamp-2 pr-4 font-sans">
+                            <p className="text-sm text-white/70 leading-relaxed mb-5 font-inter pr-4">
                               {event.description}
                             </p>
                           )}
 
                           {/* Bottom row: venue + time */}
-                          <div className="flex items-center gap-5 flex-wrap mt-auto pt-3 border-t border-accent/10">
+                          <div className="flex items-center gap-5 flex-wrap mt-auto pt-4 border-t border-white/5">
                             {event.venue && (
                               <div className="flex items-center gap-2">
-                                <MapPin className="w-3.5 h-3.5 text-accent/60" />
-                                <span className="text-[10px] md:text-xs text-accent/80 tracking-widest uppercase">
-                                  LOC // {event.venue}
+                                <MapPin className="w-4 h-4 text-fest-saffron/80" />
+                                <span className="text-[11px] md:text-xs text-white/80 font-medium tracking-widest uppercase font-outfit">
+                                  {event.venue}
                                 </span>
                               </div>
                             )}
                             {event.startTime && event.endTime && (
                               <div className="flex items-center gap-2">
-                                <Clock className="w-3.5 h-3.5 text-primary/60" />
-                                <span className="text-[10px] md:text-xs text-primary/80 tracking-widest">
-                                  T_EXEC // {formatTime(event.startTime)}
+                                <Clock className="w-4 h-4 text-fest-pink/80" />
+                                <span className="text-[11px] md:text-xs text-white/80 font-medium tracking-widest font-outfit">
+                                  {formatTime(event.startTime)}
                                 </span>
                               </div>
                             )}
@@ -300,98 +288,46 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center py-32 border-2 border-dashed border-accent/20 bg-black/40 cyber-clip relative overflow-hidden">
-                <div className="absolute inset-0 bg-accent/5 animate-pulse" />
-                <Terminal className="w-12 h-12 text-accent/40 mb-4 relative z-10" />
-                <p className="text-accent/60 text-sm tracking-[0.3em] uppercase relative z-10">
-                  ERR_404: NO_PROTOCOLS_FOUND
-                </p>
-                <div className="mt-4 w-32 h-1 bg-accent/20 relative z-10 overflow-hidden">
-                  <div className="w-full h-full bg-accent/60 origin-left animate-[scale-x_2s_infinite]" />
+              <div className="flex flex-col items-center justify-center py-24 text-center">
+                <div className="w-20 h-20 rounded-full bg-fest-gold/5 flex items-center justify-center mb-6 border border-fest-gold/20 shadow-[0_0_30px_rgba(198,156,56,0.1)]">
+                  <Calendar className="w-8 h-8 text-fest-gold/60" />
                 </div>
+                <h3 className="text-xl font-cinzel text-white/90 mb-2">No Events Scheduled</h3>
+                <p className="text-white/50 font-outfit max-w-sm">
+                  There are no activities planned for this day. Stay tuned for upcoming cultural and technical spectacles!
+                </p>
               </div>
             )}
           </div>
 
           {/* Footer */}
-          <div className="px-6 py-4 border-t border-accent/30 bg-accent/5 flex flex-col md:flex-row items-center justify-between gap-4 relative">
-            <div className="flex items-center gap-6">
-              {(["cultural"] as const).map((type) => {
-                const config = typeConfig[type];
-                const count = dayEvents.filter((e) => e.type === type).length;
-                if (count === 0) return null;
-                return (
-                  <div key={type} className="flex items-center gap-2">
-                    <div className={`w-2 h-2 rounded-none rotate-45 ${config.dot}`} />
-                    <span
-                      className={`text-[10px] uppercase tracking-[0.2em] font-bold ${config.text}`}
-                    >
-                      {config.label} [{count}]
-                    </span>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="text-[9px] text-accent/40 tracking-[0.3em] uppercase">
-              END_OF_TRANSMISSION
-            </div>
+          <div className="px-6 py-5 border-t border-fest-gold/10 bg-white/[0.02] flex items-center justify-center">
+            <p className="text-xs text-white/40 tracking-[0.3em] uppercase font-outfit font-medium flex items-center gap-3">
+              <span className="w-8 h-[1px] bg-white/10" />
+              Aikatan • Where Culture Comes Alive
+              <span className="w-8 h-[1px] bg-white/10" />
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Cyberpunk Custom Styles */}
+      {/* Elegant Custom Styles */}
       <style dangerouslySetInnerHTML={{
         __html: `
-        /* Grid Background Overlay */
-        .tech-grid {
-          background-size: 30px 30px;
-          background-image: 
-            linear-gradient(to right, rgba(var(--accent-rgb, 213, 206, 163), 0.1) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(var(--accent-rgb, 213, 206, 163), 0.1) 1px, transparent 1px);
+        /* Soft Scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 8px;
         }
-
-        /* Sci-fi Clipped Corners (Requires modern browser support, fallback to square) */
-        .cyber-clip {
-          clip-path: polygon(
-            0 0, 
-            calc(100% - 20px) 0, 
-            100% 20px, 
-            100% 100%, 
-            20px 100%, 
-            0 calc(100% - 20px)
-          );
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: 4px;
         }
-
-        /* Tech Scrollbar */
-        .cyber-scrollbar::-webkit-scrollbar {
-          width: 6px;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(227, 74, 123, 0.2); /* Fest pink fade */
+          border-radius: 4px;
         }
-        .cyber-scrollbar::-webkit-scrollbar-track {
-          background: rgba(0, 0, 0, 0.5);
-          border-left: 1px solid rgba(var(--accent-rgb, 213, 206, 163), 0.1);
-        }
-        .cyber-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(var(--accent-rgb, 213, 206, 163), 0.4);
-          border-radius: 0;
-        }
-        .cyber-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: var(--accent);
-          box-shadow: 0 0 10px var(--accent);
-        }
-
-        /* Animations */
-        @keyframes scanline {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(1000%); }
-        }
-        .animate-scanline {
-          animation: scanline 4s linear infinite;
-        }
-        
-        @keyframes scale-x {
-          0% { transform: scaleX(0); }
-          50% { transform: scaleX(1); }
-          100% { transform: scaleX(0); }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(227, 74, 123, 0.5);
         }
       `,
       }} />
