@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "June Midya",
     "role": "Convenor",
-    "image": "/team/5.jpg",
+    "image": "/team/5.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -147,7 +147,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Ashim Chattaraj",
     "role": "Sponsorship Head",
-    "image": "/team/16.jpg",
+    "image": "/team/16.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -165,7 +165,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Sisir Roy",
     "role": "Sponsorship Vice Head",
-    "image": "/team/18.jpg",
+    "image": "/team/18.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",

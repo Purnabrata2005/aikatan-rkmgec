@@ -31,10 +31,10 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { icon: <Home size={18} />, text: "Base", navigateTo: "/" },
+    { icon: <Home size={18} />, text: "Home", navigateTo: "/" },
     {
       icon: <Calendar size={18} />,
-      text: "Timeline",
+      text: "Schedule",
       navigateTo: "/#schedule",
     },
     {
@@ -49,7 +49,7 @@ const Navbar = () => {
       text: "Sponsors",
       navigateTo: "/#sponsors",
     },
-    { icon: <Users size={18} />, text: "Crew", navigateTo: "/teams" },
+    { icon: <Users size={18} />, text: "Team", navigateTo: "/teams" },
     { icon: <Mail size={18} />, text: "Contact", navigateTo: "/contact" },
   ];
 
@@ -60,7 +60,7 @@ const Navbar = () => {
         isScrolled ? "max-w-6xl mt-2 py-3" : "max-w-full mt-0 pt-8 pb-6",
       )}
     >
-      {/* Main Bar Container */}
+      {/* Main Navigation Bar */}
       <div
         className={cn(
           "relative flex items-center px-6 transition-all duration-500",
@@ -70,7 +70,7 @@ const Navbar = () => {
             : "rounded-none border-x-0 border-t-0 bg-transparent shadow-none py-3",
         )}
       >
-        {/* 1. BRANDING: The Logo with a Copper Underline */}
+        {/* 1. BRANDING: Logo Section */}
         <div
           className={cn(
             "flex flex-col items-start group transition-all duration-300 xl:origin-left",
@@ -92,7 +92,7 @@ const Navbar = () => {
           <div className="h-[1px] w-full bg-gradient-to-r from-primary to-transparent mt-1 opacity-50" />
         </div>
 
-        {/* 2. NAVIGATION: The Central Hub */}
+        {/* 2. NAVIGATION: Main Links */}
         <div className="hidden xl:flex items-center space-x-1 absolute left-1/2 -translate-x-1/2">
           {navItems.map((item, index) => (
             <Link
@@ -100,7 +100,7 @@ const Navbar = () => {
               href={item.navigateTo}
               className="relative px-4 py-2 flex flex-col items-center group overflow-hidden hover-target"
             >
-              {/* The Hover "Energy" Trace */}
+              {/* Hover top accent */}
               <div className="absolute top-0 left-0 w-full h-[2px] bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
 
               <div className="flex items-center space-x-2">
@@ -112,9 +112,9 @@ const Navbar = () => {
                 </span>
               </div>
 
-              {/* Artistic flair under the text */}
+              {/* Decorative subtitle */}
               <span className="text-[10px] font-playfair italic text-accent/50 mt-1 group-hover:text-fest-pink transition-colors tracking-wider">
-                Vol. 0{index + 1}
+                Fest 0{index + 1}
               </span>
             </Link>
           ))}

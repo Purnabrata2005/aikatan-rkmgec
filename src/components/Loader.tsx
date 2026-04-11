@@ -9,6 +9,7 @@ interface LoaderProps {
 
 const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
   const [progress, setProgress] = useState(0);
+  const [smoothProgress, setSmoothProgress] = useState(0);
   const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
@@ -28,6 +29,22 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
     }, 30);
     return () => clearInterval(interval);
   }, [finishLoading]);
+
+  useEffect(() => {
+    let frameId: number;
+
+    const animate = () => {
+      setSmoothProgress((prev) => {
+        const delta = progress - prev;
+        if (Math.abs(delta) < 0.05) return progress;
+        return prev + delta * 0.18;
+      });
+      frameId = requestAnimationFrame(animate);
+    };
+
+    frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [progress]);
 
   // Prevent scrolling while the loading screen is active
   useEffect(() => {
@@ -93,14 +110,33 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#18110c] overflow-hidden select-none font-sans"
         >
           {/* Ambient Terra Cotta Glow */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-900/20 via-[#18110c] to-black" />
+          <motion.div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-900/30 via-[#18110c] to-black"
+            animate={{ scale: [1, 1.06, 1], opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          />
+
+          {/* Soft moving mesh to avoid a static background */}
+          <motion.div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage:
+                "radial-gradient(circle at 20% 25%, rgba(245, 158, 11, 0.18) 0%, transparent 35%), radial-gradient(circle at 78% 72%, rgba(14, 116, 144, 0.22) 0%, transparent 38%)",
+            }}
+            animate={{ x: [0, 20, -20, 0], y: [0, -12, 8, 0] }}
+            transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          />
 
           <div className="relative w-[340px] h-[340px] flex items-center justify-center mt-[-40px]">
             
             {/* 1. Base Layer: Dim / Monochromatic */}
-            <div className="absolute inset-0">
+            <motion.div
+              className="absolute inset-0"
+              animate={{ rotate: [0, 2, 0, -2, 0] }}
+              transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+            >
               <TapestryMotif />
-            </div>
+            </motion.div>
 
             {/* 2. Fill Layer: Vibrant Color (Revealed bottom-to-top) */}
             <motion.div
@@ -108,28 +144,55 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
               style={{
                 // CSS clip-path hides the top portion based on progress
                 // inset(top right bottom left) -> inset(100% 0 0 0) means fully hidden
-                clipPath: `inset(${100 - progress}% 0 0 0)`,
+                clipPath: `inset(${100 - smoothProgress}% 0 0 0)`,
                 transition: "clip-path 0.1s ease-out",
               }}
+              animate={{ rotate: [0, -1.5, 0, 1.5, 0] }}
+              transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
             >
               <TapestryMotif isForeground={true} />
               
               {/* Optional: Add a glowing bar at the intersection point of the fill */}
               <div 
                 className="absolute w-full h-[2px] bg-amber-200/50 blur-[2px]"
-                style={{ bottom: `${progress}%` }}
+                style={{ bottom: `${smoothProgress}%` }}
               />
             </motion.div>
 
+            {[0, 1, 2, 3].map((dot) => (
+              <motion.div
+                key={dot}
+                className="absolute w-2 h-2 rounded-full bg-amber-200/70 blur-[0.5px]"
+                style={{ left: "50%", top: "50%" }}
+                animate={{
+                  x: [0, Math.cos((dot * Math.PI) / 2) * 105, 0],
+                  y: [0, Math.sin((dot * Math.PI) / 2) * 105, 0],
+                  opacity: [0, 1, 0],
+                  scale: [0.7, 1.2, 0.7],
+                }}
+                transition={{
+                  duration: 2.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: dot * 0.35,
+                }}
+              />
+            ))}
+
             {/* 3. Central Percentage Text */}
             <div className="absolute inset-0 flex items-center justify-center drop-shadow-md">
-              <div 
+              <motion.div
                 className="text-amber-100/90 font-serif font-bold tracking-tighter"
-                style={{ fontSize: progress === 100 ? '3rem' : '2.75rem', transition: 'font-size 0.5s ease-out' }}
+                style={{
+                  fontSize: smoothProgress >= 99.9 ? "3rem" : "2.75rem",
+                  transition: "font-size 0.5s ease-out",
+                }}
+                animate={{ textShadow: ["0 0 0px rgba(251,191,36,0)", "0 0 16px rgba(251,191,36,0.45)", "0 0 0px rgba(251,191,36,0)"] }}
+                transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
               >
-                {Math.floor(progress)}
+                {Math.floor(smoothProgress)}
                 <span className="text-xl text-amber-500/80 ml-1 font-sans">%</span>
-              </div>
+              </motion.div>
             </div>
           </div>
 

@@ -42,14 +42,14 @@ const Footer: React.FC = () => {
                         <h3 className="text-highlight font-cinzel tracking-widest text-lg font-bold mb-8">CONNECT</h3>
                         <div className="flex flex-col space-y-4">
                             <Link href="mailto:culturalfest@rkmgec.ac.in" className="group flex items-center gap-3 text-muted-foreground hover:text-fest-pink transition-colors duration-300">
-                                <span className="font-outfit text-xs tracking-widest uppercase">Email</span>
-                                <span className="h-[1px] w-6 bg-accent/20 group-hover:w-12 group-hover:bg-fest-pink/60 transition-all duration-500" />
+                                <span className="font-outfit text-xs tracking-widest uppercase">Email</span>fest@rkmgec.ac.in
+                                <span className="h-[1px] w-6 bg-accent/20 group-hover:w-12 group-hover:bg-fest-pink/60 transition-all duration-500" /> 
                             </Link>
                             <div className="flex gap-4 pt-4">
-                                <SocialLink href="https://www.facebook.com/share/16AmVp6gyk/" Icon={Facebook} />
-                                <SocialLink href="https://www.instagram.com/techlavya.rkmgec/" Icon={Instagram} />
+                                <SocialLink href="https://www.facebook.com/aikatan.rkmgec" Icon={Facebook} />
+                                <SocialLink href="https://www.instagram.com/aikatan.rkmgec/" Icon={Instagram} />
                                 <SocialLink href="https://www.youtube.com/@RKMGECOFFICIAL" Icon={Youtube} />
-                                <SocialLink href="https://github.com/TechLavya" Icon={Github} />
+                                <SocialLink href="https://github.com/rkmgec-admin/aikatan-rkmgec" Icon={Github} />
                             </div>
                         </div>
                     </div>
