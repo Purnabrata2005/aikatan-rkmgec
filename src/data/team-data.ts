@@ -129,7 +129,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Rakesh Mondal",
     "role": "Security Vice Head",
-    "image": "/logo.png",
+    "image": "/team/19.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
