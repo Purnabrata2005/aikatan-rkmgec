@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Loader from "@/components/Loader";
 import SplashCursor from "@/components/SplashCursor";
+import FloatingMusicIcons from "@/components/FloatingMusicIcons";
 
 
 
@@ -49,6 +50,7 @@ export default function ClientLayout({
         <Loader finishLoading={() => setLoading(false)} />
       ) : (
         <div className="relative z-10">
+          <FloatingMusicIcons />
           <SplashCursor />
           <Navbar />
           {children}
