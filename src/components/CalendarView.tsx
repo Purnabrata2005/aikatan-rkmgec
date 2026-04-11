@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EventDetailsModal } from "./EventDetailsModal";
+import { Flower2, Sparkles, Flame, Music } from "lucide-react";
 
 // --- Types & Constants ---
 export interface CalendarEvent {
@@ -157,6 +158,47 @@ const MobileTimeline = ({ entries, year }: { entries: MobileTimelineEntry[]; yea
 export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events, allEvents = events }) => {
   const [selectedDate, setSelectedDate] = useState<number | null>(null);
   const [selectedMonth, setSelectedMonth] = useState<number | null>(null);
+  const [audioCtx, setAudioCtx] = useState<AudioContext | null>(null);
+
+  useEffect(() => {
+    const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
+    if (AudioContextClass) setAudioCtx(new AudioContextClass());
+  }, []);
+
+  const playSound = (type: 'hover' | 'click') => {
+    if (!audioCtx) return;
+    if (audioCtx.state === 'suspended') {
+      try { audioCtx.resume(); } catch {}
+    }
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      
+      if (type === 'hover') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(700, audioCtx.currentTime + 0.05);
+        gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
+        osc.start(audioCtx.currentTime);
+        osc.stop(audioCtx.currentTime + 0.05);
+      } else {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.1);
+        osc.start(audioCtx.currentTime);
+        osc.stop(audioCtx.currentTime + 0.1);
+      }
+    } catch {}
+  };
+
+  const monthName = useMemo(() => {
+    return new Date(year, month).toLocaleString('default', { month: 'long' }).toUpperCase();
+  }, [year, month]);
 
   const calendarDays = useMemo(() => {
     const firstDay = new Date(year, month, 1).getDay();
@@ -200,27 +242,40 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
 
       <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col gap-8 flex-1">
         
-        {/* Elegant Header */}
-        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center md:text-left border-b border-fuchsia-900/30 pb-6">
-          <div className="flex items-center justify-center md:justify-start gap-3 mb-2">
-            <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_8px_#fbbf24]" />
-            <span className="text-xs tracking-[0.2em] font-medium text-amber-300 uppercase">
-              Event Itinerary
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight drop-shadow-md">
+        <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="text-center md:text-left border-b border-fuchsia-900/30 pb-6 flex items-center justify-center md:justify-start gap-4">
+          <Flower2 className="text-fuchsia-400 w-10 h-10 md:w-12 md:h-12 hidden md:block" />
+          <h2 className="text-4xl md:text-6xl font-bold text-white tracking-tight font-cinzel flex items-center justify-center md:justify-start gap-3 w-full">
+            <span className="md:hidden"><Flower2 className="text-fuchsia-400 w-8 h-8" /></span>
             Festival <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-amber-300">Timeline</span>
+            <Sparkles className="text-amber-400 w-6 h-6 md:w-8 md:h-8" />
           </h2>
         </motion.div>
 
         {/* Content Area */}
-        <div className="relative w-full bg-[#1c0822]/40 backdrop-blur-xl border border-fuchsia-500/20 rounded-3xl p-4 sm:p-8 shadow-2xl">
+        <div className="relative w-full bg-[#1c0822]/40 backdrop-blur-xl border border-fuchsia-500/20 rounded-3xl p-4 sm:p-8 shadow-2xl overflow-hidden">
+          
+          {/* Music Watermarks Inside Calendar Box */}
+          <div className="absolute inset-0 pointer-events-none z-0">
+            <Music className="absolute top-[15%] left-[8%] w-10 h-10 md:w-20 md:h-20 text-fuchsia-500/10 -rotate-12" />
+            <Music className="absolute bottom-[20%] left-[20%] w-12 h-12 md:w-24 md:h-24 text-amber-500/10 rotate-[20deg]" />
+            <Music className="absolute top-[10%] right-[15%] w-8 h-8 md:w-16 md:h-16 text-fuchsia-400/10 rotate-12" />
+            <Music className="absolute top-[50%] right-[5%] w-10 h-10 md:w-18 md:h-18 text-amber-400/10 -rotate-[15deg]" />
+            <Music className="absolute bottom-[10%] right-[30%] w-14 h-14 md:w-24 md:h-24 text-fuchsia-500/10 rotate-[10deg]" />
+            <Music className="absolute top-[35%] left-[45%] w-8 h-8 md:w-16 md:h-16 text-amber-400/10 -rotate-6" />
+          </div>
           
           <MobileTimeline entries={mobileTimelineEntries} year={year} />
 
           {/* Desktop Grid View (Cleaned Up) */}
           <div className="hidden md:block">
-            <div className="grid grid-cols-7 mb-6 relative z-10">
+            {/* Header: Month and Year */}
+            <div className="flex justify-between items-end mb-4 px-4 border-b border-white/5 pb-2">
+              <h3 className="text-2xl font-cinzel font-bold text-fuchsia-200 tracking-widest drop-shadow-lg uppercase">
+                {monthName} {year}
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-7 mb-6 relative z-10 mt-4">
               {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day) => (
                 <div key={day} className="text-center text-xs font-semibold tracking-widest text-white/40 uppercase">
                   {day}
@@ -243,29 +298,37 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
                 return (
                   <motion.div
                     variants={{ hidden: { opacity: 0, scale: 0.9 }, show: { opacity: 1, scale: 1 } }}
+                    whileHover={{ scale: isInteractive ? 1.15 : 1.05, y: isInteractive ? -2 : 0 }}
+                    whileTap={{ scale: isInteractive ? 0.95 : 1 }}
                     key={idx}
+                    onMouseEnter={() => {
+                        if (isInteractive) playSound('hover');
+                    }}
                     onClick={() => {
                       if (isInteractive) {
+                        playSound('click');
                         setSelectedDate(dayObj.date);
                         setSelectedMonth(dayObj.month);
                       }
                     }}
                     className={`relative flex items-center justify-center transition-all duration-300 rounded-2xl
-                      ${isInteractive ? 'cursor-pointer hover:-translate-y-1' : ''}
+                      ${isInteractive ? 'cursor-pointer hover:shadow-lg' : ''}
                       ${isFestival 
-                        ? 'w-16 h-16 bg-gradient-to-br from-fuchsia-600/30 to-amber-500/20 border border-amber-400/50 shadow-[0_4px_20px_rgba(217,70,239,0.3)]' 
+                        ? 'w-16 h-16 bg-gradient-to-br from-fuchsia-600/40 to-amber-500/30 border border-amber-400/60 shadow-[0_4px_20px_rgba(217,70,239,0.4)]' 
                         : event
-                        ? 'w-14 h-14 bg-white/5 border border-white/10 hover:bg-white/10'
-                        : 'w-14 h-14 bg-transparent text-white/20'
+                        ? 'w-14 h-14 bg-white/10 border border-white/20 shadow-md hover:bg-white/20'
+                        : 'w-14 h-14 bg-white/5 border-transparent hover:border-white/10 hover:bg-white/10'
                       }`}
                   >
-                    <span className={`text-lg font-medium ${isFestival ? 'text-amber-100 font-bold text-xl' : event ? 'text-fuchsia-100' : ''}`}>
+                    <span className={`font-medium ${isFestival ? 'text-amber-100 font-bold text-2xl' : event ? 'text-fuchsia-100 font-semibold text-2xl' : 'text-white/60 text-xl'} font-cinzel`}>
                       {dayObj.date}
                     </span>
                     
+                    {isFestival && <Flame className="absolute -top-3 -right-2 w-6 h-6 text-amber-500 drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />}
+                    
                     {/* Minimal Event Indicator Dot */}
                     {event && !isFestival && (
-                      <div className={`absolute -top-1 -right-1 w-3 h-3 rounded-full border-2 border-[#1c0822] ${getEventStyles(event.type).dot}`} />
+                      <Flower2 className={`absolute -top-2 -right-2 w-5 h-5 ${getEventStyles(event.type).color}`} />
                     )}
                   </motion.div>
                 );

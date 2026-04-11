@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useMemo } from "react";
-import { X, MapPin, Clock, Zap, Gamepad2, Sun, Sparkles, Music, Star, Calendar } from "lucide-react";
+import { X, MapPin, Clock, Zap, Gamepad2, Sun, Music, Star, Calendar } from "lucide-react";
 
 interface Event {
   date: number;

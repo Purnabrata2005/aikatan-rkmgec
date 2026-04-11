@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Soumik Sarkar",
     "role": "Secretary",
-    "image": "/team/3.jpg",
+    "image": "/logo.png",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -75,7 +75,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Nilanjan Sau",
     "role": "Web Designer Co-Head",
-    "image": "/team/8.jpeg",
+    "image": "/team/8.jpg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -120,7 +120,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Aditya Hansda",
     "role": "Security Head",
-    "image": "/team/13.jpg",
+    "image": "/logo.png",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -129,7 +129,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Rakesh Mondal",
     "role": "Security Vice Head",
-    "image": "/team/14.jpg",
+    "image": "/team/19.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",

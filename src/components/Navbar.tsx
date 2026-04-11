@@ -111,11 +111,6 @@ const Navbar = () => {
                   {item.text}
                 </span>
               </div>
-
-              {/* Decorative subtitle */}
-              <span className="text-[10px] font-playfair italic text-accent/50 mt-1 group-hover:text-fest-pink transition-colors tracking-wider">
-                Fest 0{index + 1}
-              </span>
             </Link>
           ))}
         </div>
