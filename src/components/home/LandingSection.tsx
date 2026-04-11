@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import CountdownTimer from "../CountdownTimer";
-import Link from "next/link";
 
 const LandingSection = () => {
   return (

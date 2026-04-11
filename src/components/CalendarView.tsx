@@ -3,7 +3,7 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { EventDetailsModal } from "./EventDetailsModal";
-import { Flower2, Sparkles, Flame, Music, Palette, Star } from "lucide-react";
+import { Flower2, Sparkles, Flame, Music } from "lucide-react";
 
 // --- Types & Constants ---
 export interface CalendarEvent {
@@ -168,7 +168,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
   const playSound = (type: 'hover' | 'click') => {
     if (!audioCtx) return;
     if (audioCtx.state === 'suspended') {
-      try { audioCtx.resume(); } catch (e) {}
+      try { audioCtx.resume(); } catch {}
     }
     try {
       const osc = audioCtx.createOscillator();
@@ -193,7 +193,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
         osc.start(audioCtx.currentTime);
         osc.stop(audioCtx.currentTime + 0.1);
       }
-    } catch (e) {}
+    } catch {}
   };
 
   const monthName = useMemo(() => {

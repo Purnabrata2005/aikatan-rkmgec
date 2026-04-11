@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Loader from "@/components/Loader";
@@ -15,26 +15,6 @@ export default function ClientLayout({
   children: React.ReactNode;
 }) {
   const [loading, setLoading] = useState(true);
-  const [lowPerformanceMode, setLowPerformanceMode] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const checkPerformanceProfile = () => {
-      const nav = navigator as Navigator & { deviceMemory?: number };
-      const lowCpu = navigator.hardwareConcurrency > 0 && navigator.hardwareConcurrency <= 4;
-      const lowMemory = typeof nav.deviceMemory === "number" && nav.deviceMemory <= 4;
-      const reducedMotion = mediaQuery.matches;
-      setLowPerformanceMode(lowCpu || lowMemory || reducedMotion);
-    };
-
-    checkPerformanceProfile();
-    mediaQuery.addEventListener("change", checkPerformanceProfile);
-
-    return () => {
-      mediaQuery.removeEventListener("change", checkPerformanceProfile);
-    };
-  }, []);
 
   return (
     <div className="relative min-h-screen">

@@ -1,4 +1,3 @@
-import EsportsEventSection from '@/components/home/EsportEventSection'
 import FAQSection from '@/components/home/FAQSection'
 import GalllerySection from '@/components/home/GalllerySection'
 import LandingSection from '@/components/home/LandingSection'
