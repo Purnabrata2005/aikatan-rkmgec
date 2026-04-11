@@ -15,7 +15,7 @@ export default function FloatingMusicIcons() {
 
     // Detect mobile for lightweight particle count to keep performance incredibly high
     const isMobile = window.innerWidth <= 768;
-    const numIcons = isMobile ? 25 : 65; // increased density!
+    const numIcons = isMobile ? 12 : 32; // Cut by 50% as requested
     
     let animationFrameId: number;
     let icons: any[] = [];
