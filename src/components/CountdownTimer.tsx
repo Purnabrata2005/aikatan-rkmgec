@@ -76,20 +76,26 @@ const TimeUnit = ({
 }) => {
   return (
     <div className="flex flex-col items-center group">
-      {/* Label with "Glitch" feel */}
-      <span className="text-[9px] sm:text-[10px] md:text-xs font-bold tracking-[0.18em] text-gray-500 mb-2.5 sm:mb-3 group-hover:text-white transition-colors">
+      {/* Label with festive styling */}
+      <span className="text-[9px] sm:text-[10px] md:text-xs font-semibold tracking-[0.2em] text-fest-gold/80 mb-2.5 sm:mb-3 group-hover:text-fest-saffron transition-colors">
         {label}
       </span>
 
       <div
-        className={`relative w-16 h-20 sm:w-20 sm:h-24 md:w-28 md:h-32 flex items-center justify-center bg-[#0a0a0a] border-2 ${borderColor} rounded-xl overflow-hidden shadow-2xl ${glowColor}`}
+        className={`relative w-16 h-20 sm:w-20 sm:h-24 md:w-28 md:h-32 flex items-center justify-center bg-gradient-to-b from-[#2c0f1f] via-[#1b0a15] to-[#12070f] border-2 ${borderColor} rounded-xl overflow-hidden shadow-2xl ${glowColor}`}
       >
-        {/* Decorative Circuit Lines */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        {/* Ornamental top and bottom trims */}
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fest-gold/50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fest-saffron/40 to-transparent" />
 
-        {/* Subtle Scanline Overlay */}
-        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+        {/* Soft festive wash */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-fest-gold/10 via-transparent to-fest-pink/10" />
+
+        {/* Rangoli-like corner dots */}
+        <span className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-fest-gold/70" />
+        <span className="absolute top-2 right-2 w-1.5 h-1.5 rounded-full bg-fest-pink/70" />
+        <span className="absolute bottom-2 left-2 w-1.5 h-1.5 rounded-full bg-fest-pink/70" />
+        <span className="absolute bottom-2 right-2 w-1.5 h-1.5 rounded-full bg-fest-gold/70" />
 
         <AnimatePresence mode="popLayout">
           <motion.span
@@ -98,14 +104,14 @@ const TimeUnit = ({
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
             transition={{ duration: 0.3, ease: "circOut" }}
-            className="text-3xl sm:text-4xl md:text-6xl font-mono font-black text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
+            className="text-3xl sm:text-4xl md:text-6xl font-cinzel font-bold text-fest-gold drop-shadow-[0_0_12px_rgba(214,177,90,0.35)]"
           >
             {value.toString().padStart(2, "0")}
           </motion.span>
         </AnimatePresence>
 
         {/* Glossy Reflection */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-40" />
       </div>
     </div>
   );
