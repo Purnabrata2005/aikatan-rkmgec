@@ -66,15 +66,15 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
       {isForeground && (
         <defs>
           <linearGradient id="tapestryGrad" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stopColor="#b91c1c" />   {/* Deep Crimson */}
-            <stop offset="50%" stopColor="#ea580c" />  {/* Warm Orange */}
-            <stop offset="100%" stopColor="#0284c7" /> {/* Cerulean Blue */}
+            <stop offset="0%" stopColor="#5B1229" />
+            <stop offset="50%" stopColor="#F47920" />
+            <stop offset="100%" stopColor="#C69C38" />
           </linearGradient>
         </defs>
       )}
 
       <g
-        stroke={isForeground ? "url(#tapestryGrad)" : "rgba(146, 64, 14, 0.2)"}
+        stroke={isForeground ? "url(#tapestryGrad)" : "rgba(198, 156, 56, 0.24)"}
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -107,11 +107,11 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
         <motion.div
           exit={{ opacity: 0, filter: "blur(12px)", scale: 1.05 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#18110c] overflow-hidden select-none font-sans"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background overflow-hidden select-none font-sans"
         >
-          {/* Ambient Terra Cotta Glow */}
+          {/* Ambient theme glow */}
           <motion.div
-            className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-900/30 via-[#18110c] to-black"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/25 via-secondary/30 to-background"
             animate={{ scale: [1, 1.06, 1], opacity: [0.85, 1, 0.85] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -121,7 +121,7 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
             className="absolute inset-0 opacity-30"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 20% 25%, rgba(245, 158, 11, 0.18) 0%, transparent 35%), radial-gradient(circle at 78% 72%, rgba(14, 116, 144, 0.22) 0%, transparent 38%)",
+                "radial-gradient(circle at 20% 25%, rgba(244, 121, 32, 0.2) 0%, transparent 35%), radial-gradient(circle at 78% 72%, rgba(227, 74, 123, 0.2) 0%, transparent 38%)",
             }}
             animate={{ x: [0, 20, -20, 0], y: [0, -12, 8, 0] }}
             transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
@@ -151,18 +151,12 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
               transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
             >
               <TapestryMotif isForeground={true} />
-              
-              {/* Optional: Add a glowing bar at the intersection point of the fill */}
-              <div 
-                className="absolute w-full h-[2px] bg-amber-200/50 blur-[2px]"
-                style={{ bottom: `${smoothProgress}%` }}
-              />
             </motion.div>
 
             {[0, 1, 2, 3].map((dot) => (
               <motion.div
                 key={dot}
-                className="absolute w-2 h-2 rounded-full bg-amber-200/70 blur-[0.5px]"
+                className="absolute w-2 h-2 rounded-full bg-accent/70 blur-[0.5px]"
                 style={{ left: "50%", top: "50%" }}
                 animate={{
                   x: [0, Math.cos((dot * Math.PI) / 2) * 105, 0],
@@ -182,16 +176,16 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
             {/* 3. Central Percentage Text */}
             <div className="absolute inset-0 flex items-center justify-center drop-shadow-md">
               <motion.div
-                className="text-amber-100/90 font-serif font-bold tracking-tighter"
+                className="text-foreground/90 font-serif font-bold tracking-tighter"
                 style={{
                   fontSize: smoothProgress >= 99.9 ? "3rem" : "2.75rem",
                   transition: "font-size 0.5s ease-out",
                 }}
-                animate={{ textShadow: ["0 0 0px rgba(251,191,36,0)", "0 0 16px rgba(251,191,36,0.45)", "0 0 0px rgba(251,191,36,0)"] }}
+                animate={{ textShadow: ["0 0 0px rgba(244,121,32,0)", "0 0 16px rgba(244,121,32,0.45)", "0 0 0px rgba(244,121,32,0)"] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
               >
                 {Math.floor(smoothProgress)}
-                <span className="text-xl text-amber-500/80 ml-1 font-sans">%</span>
+                <span className="text-xl text-primary/80 ml-1 font-sans">%</span>
               </motion.div>
             </div>
           </div>
@@ -203,10 +197,10 @@ const CulturalTapestryLoader = ({ finishLoading }: LoaderProps) => {
               transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
               className="flex flex-col items-center"
             >
-              <span className="text-amber-700/60 text-[10px] uppercase tracking-[0.4em] font-bold mb-2">
+              <span className="text-primary/60 text-[10px] uppercase tracking-[0.4em] font-bold mb-2">
                 Cultural Synergy
               </span>
-              <span className="text-amber-200/90 text-lg md:text-xl tracking-[0.2em] font-serif uppercase drop-shadow-[0_0_8px_rgba(251,191,36,0.3)]">
+              <span className="text-accent/90 text-lg md:text-xl tracking-[0.2em] font-serif uppercase drop-shadow-[0_0_8px_rgba(198,156,56,0.35)]">
                 Gathering the Arts
               </span>
             </motion.div>

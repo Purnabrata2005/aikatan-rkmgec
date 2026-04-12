@@ -4,6 +4,7 @@ import LandingSection from '@/components/home/LandingSection'
 import SponsorSection from '@/components/home/SponsorSection'
 import TimelineSection from '@/components/home/TimelineSection'
 import TshirtSection from '@/components/home/TshirtSection'
+import ETicketSection from '@/components/home/ETicketSection'
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
         </div>
       </section>
       <TshirtSection />
+      <ETicketSection />
       <GalllerySection />
       <FAQSection />
       <SponsorSection />

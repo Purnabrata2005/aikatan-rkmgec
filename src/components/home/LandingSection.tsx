@@ -13,9 +13,9 @@ const LandingSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-[3rem] sm:text-5xl md:text-7xl lg:text-[10rem] font-bold font-cinzel tracking-tight leading-none select-none">
+            <h1 className="text-[3rem] sm:text-5xl md:text-7xl lg:text-[10rem] font-bold font-bengali tracking-tight leading-none select-none">
               <span className=" text-transparent bg-clip-text bg-gradient-to-b from-fest-saffron via-fest-gold to-white/30 uppercase">
-                ঐকtan
+                ঐক tan
               </span>
             </h1>
           </motion.div>
@@ -26,8 +26,8 @@ const LandingSection = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="mt-3 sm:mt-2 text-base sm:text-2xl md:text-4xl lg:text-6xl font-dancingScript tracking-widest text-highlight/90"
           >
-            Where Culture{" "}
-            <span className="text-primary font-bold">Comes Alive</span>
+           এক ধনুকে {" "}
+            <span className="text-primary font-bold">পঞ্চবাণ</span>
           </motion.div>
         </div>
 
