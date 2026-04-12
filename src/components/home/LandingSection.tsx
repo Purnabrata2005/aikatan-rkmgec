@@ -13,9 +13,9 @@ const LandingSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <h1 className="text-[3rem] sm:text-5xl md:text-7xl lg:text-[10rem] font-bold font-cinzel tracking-tight leading-none select-none">
+            <h1 className="text-[3rem] sm:text-5xl md:text-7xl lg:text-[10rem] font-bold font-bengali tracking-tight leading-none select-none">
               <span className=" text-transparent bg-clip-text bg-gradient-to-b from-fest-saffron via-fest-gold to-white/30 uppercase">
-                ঐকtan
+                ঐক tan
               </span>
             </h1>
           </motion.div>
