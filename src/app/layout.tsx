@@ -1,6 +1,15 @@
 import ClientLayout from "@/components/ClientLayout";
 import type { Metadata } from "next";
-import { Cinzel, Playfair_Display, Dancing_Script, Outfit, Inter, Poppins, Noto_Serif_Bengali } from "next/font/google";
+import {
+  Cinzel,
+  Playfair_Display,
+  Dancing_Script,
+  Outfit,
+  Inter,
+  Poppins,
+  Noto_Serif_Bengali,
+} from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const cinzelFont = Cinzel({
@@ -42,25 +51,19 @@ const notoSerifBengali = Noto_Serif_Bengali({
 
 export const metadata: Metadata = {
   title: "Aikatan",
-  description: "Aikatan is the official cultural festival of Ramkrishna Mahato Government Engineering College.",
-  keywords: [
-    "aikatan",
-    "rkmgec",
-    "cultural fest",
-    "fest",
-    "arts",
-    "cultural"
-  ],
+  description:
+    "Aikatan is the official cultural festival of Ramkrishna Mahato Government Engineering College.",
+  keywords: ["aikatan", "rkmgec", "cultural fest", "fest", "arts", "cultural"],
   metadataBase: new URL("https://aikatan-rkmgec.com/"),
   openGraph: {
-    title: "Aikatan",
+    title: "ঐকtan ",
     type: "website",
-    siteName: "Aikatan",
+    siteName: "ঐকtan ",
     description: "Vibrant Cultural Festival Experience",
   },
   alternates: {
-    canonical: "https://aikatan-rkmgec.com/"
-  }
+    canonical: "https://aikatan-rkmgec.com/",
+  },
 };
 
 export default function RootLayout({
@@ -73,6 +76,7 @@ export default function RootLayout({
       <body
         className={`${cinzelFont.variable} ${playfairFont.variable} ${dancingScriptFont.variable} ${outfitFont.variable} ${inter.variable} ${poppins.variable} ${notoSerifBengali.variable} antialiased w-full text-foreground bg-background font-inter`}
       >
+        <Analytics />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

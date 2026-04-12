@@ -26,8 +26,8 @@ const LandingSection = () => {
             transition={{ delay: 0.5, duration: 1 }}
             className="mt-3 sm:mt-2 text-base sm:text-2xl md:text-4xl lg:text-6xl font-dancingScript tracking-widest text-highlight/90"
           >
-            Where Culture{" "}
-            <span className="text-primary font-bold">Comes Alive</span>
+           এক ধনুকে {" "}
+            <span className="text-primary font-bold">পঞ্চবাণ</span>
           </motion.div>
         </div>
 

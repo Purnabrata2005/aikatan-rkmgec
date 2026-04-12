@@ -39,12 +39,21 @@ export default function BackgroundMusic() {
 
   return (
     <>
-      <audio ref={audioRef} src="/audio.m4a" autoPlay loop muted preload="auto" />
+      <audio
+        ref={audioRef}
+        src="/music.m4a"
+        autoPlay
+        loop
+        muted
+        preload="auto"
+      />
 
       <button
         type="button"
         onClick={toggleMute}
-        aria-label={isMuted ? "Unmute background music" : "Mute background music"}
+        aria-label={
+          isMuted ? "Unmute background music" : "Mute background music"
+        }
         className="fixed bottom-4 right-4 z-[60] inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/40 bg-background/80 text-primary shadow-lg backdrop-blur-md transition hover:scale-105 hover:bg-background"
       >
         {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
