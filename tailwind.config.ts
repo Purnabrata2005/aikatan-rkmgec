@@ -16,6 +16,7 @@ const config: Config = {
 			fontFamily: {
 				cinzel: ['var(--font-cinzel)'],
 				playfair: ['var(--font-playfair)'],
+				bengali: ['var(--font-noto-serif-bengali)', 'var(--font-playfair)'],
 				dancingScript: ['var(--font-dancing-script)'],
 				outfit: ['var(--font-outfit)'],
 				inter: ['var(--font-inter)'],

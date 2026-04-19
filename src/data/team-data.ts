@@ -30,7 +30,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Soumik Sarkar",
     "role": "Secretary",
-    "image": "/team/3.jpg",
+    "image": "/team/3.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -48,7 +48,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "June Midya",
     "role": "Convenor",
-    "image": "/team/5.jpg",
+    "image": "/team/5.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -75,7 +75,16 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Nilanjan Sau",
     "role": "Web Designer Co-Head",
-    "image": "/team/8.jpeg",
+    "image": "/team/8.jpg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Debojyoti Saha",
+    "role": "Web Designer Co-Head",
+    "image": "/team/25.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -120,7 +129,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Aditya Hansda",
     "role": "Security Head",
-    "image": "/team/13.jpg",
+    "image": "/team/30.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -129,7 +138,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Rakesh Mondal",
     "role": "Security Vice Head",
-    "image": "/team/14.jpg",
+    "image": "/team/19.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -147,7 +156,7 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Ashim Chattaraj",
     "role": "Sponsorship Head",
-    "image": "/team/16.jpg",
+    "image": "/team/16.jpeg",
     "instagram": "",
     "twitter": "",
     "facebook": "",
@@ -165,7 +174,52 @@ export const teamMembers: TeamMember[] = [
   {
     "name": "Sisir Roy",
     "role": "Sponsorship Vice Head",
-    "image": "/team/18.jpg",
+    "image": "/team/18.jpeg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Tuhinkanti Roy",
+    "role": "Marketing Head",
+    "image": "/team/20.jpg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Joyprakash Mahato",
+    "role": "Marketing Head",
+    "image": "/team/21.jpg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Jayanta Mahato",
+    "role": "Marketing Vice Head",
+    "image": "/team/24.jpg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Sukanto Hembram",
+    "role": "Social Media Head",
+    "image": "/team/23.jpg",
+    "instagram": "",
+    "twitter": "",
+    "facebook": "",
+    "linkedin": ""
+  },
+  {
+    "name": "Gouri Shankar Mahato",
+    "role": "Social Media Head",
+    "image": "/logo.png",
     "instagram": "",
     "twitter": "",
     "facebook": "",
