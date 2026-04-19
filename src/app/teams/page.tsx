@@ -5,7 +5,7 @@ import React from 'react'
 
 const Teams: React.FC = () => {
      return (
-          <div className="min-h-screen text-foreground py-12 px-8 md:px-16 lg:px-20 pt-32">
+          <div className="min-h-screen text-foreground py-12 px-8 md:px-16 lg:px-20 pt-36">
                {/* <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-accent to-primary mb-12 font-orbitron tracking-widest">
                     HEAD TEAM MEMBERS
                </h1> */}

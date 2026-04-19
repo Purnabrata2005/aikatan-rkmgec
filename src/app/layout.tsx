@@ -61,6 +61,11 @@ export const metadata: Metadata = {
     siteName: "ঐকtan ",
     description: "Vibrant Cultural Festival Experience",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   alternates: {
     canonical: "https://aikatan-rkmgec.com/",
   },
