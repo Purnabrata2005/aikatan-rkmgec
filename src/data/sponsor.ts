@@ -31,12 +31,6 @@ export const sponsorData: sponsorDataType[] = [
     logo: "/sponsor/6.jpeg",
   },
   {
-    role: "Associate Sponsor",
-    name: "Dutta Optics",
-    note: "Associate sponsor support and outreach",
-    logo: "/sponsor/8.jpeg",
-  },
-  {
     role: "Associate Partner",
     name: "Srabu Consultancy",
     note: "Strategic support and engagement",
@@ -55,7 +49,7 @@ export const sponsorData: sponsorDataType[] = [
     logo: "/sponsor/5.jpeg",
   },
   {
-    role: "Powered By",
+    role: "Title Sponsor",
     name: "Pragati Group",
     logo: "/sponsor/pragati-cement.png",
     note: "Core event backing and execution support",

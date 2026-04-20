@@ -6,11 +6,11 @@ import { sponsorData } from "@/data/sponsor";
 const SponsorSection: React.FC = () => {
   const featuredPartners = sponsorData.filter(
     (partner) =>
-      partner.role === "Powered By" || partner.role === "Hospitality Partner",
+      partner.role === "Title Sponsor" || partner.role === "Hospitality Partner",
   );
   const supportingPartners = sponsorData.filter(
     (partner) =>
-      partner.role !== "Powered By" && partner.role !== "Hospitality Partner",
+      partner.role !== "Title Sponsor" && partner.role !== "Hospitality Partner",
   );
 
   return (
@@ -72,7 +72,7 @@ const SponsorSection: React.FC = () => {
                           src={partner.logo}
                           alt={partner.name}
                           fill
-                          className="object-contain p-4 opacity-80 transition-opacity duration-300 group-hover:opacity-100"
+                          className="object-contain p-4"
                         />
                       </div>
                     )}
@@ -110,7 +110,7 @@ const SponsorSection: React.FC = () => {
                     </h4>
                   </div>
                   {partner.logo && (
-                    <div className="relative h-10 w-10 shrink-0 opacity-50 grayscale transition-all duration-500 group-hover:scale-110 group-hover:opacity-100 group-hover:grayscale-0">
+                    <div className="relative h-10 w-10 shrink-0 transition-transform duration-500 group-hover:scale-110">
                       <Image
                         src={partner.logo}
                         alt={partner.name}

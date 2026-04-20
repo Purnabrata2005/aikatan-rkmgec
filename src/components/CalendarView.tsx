@@ -34,8 +34,8 @@ interface MobileTimelineEntry {
 
 // Ensure festival dates match your specific cultural fest days
 const FESTIVAL_DATES = [
-  { date: 15, month: 4, label: "MAHA UTSAV - DAY 1" },
-  { date: 16, month: 4, label: "MAHA UTSAV - DAY 2" },
+  { date: 15, month: 5, label: "MAHA UTSAV - DAY 1" },
+  { date: 16, month: 5, label: "MAHA UTSAV - DAY 2" },
 ];
 
 // --- Cultural Fest Styling Helpers ---
@@ -65,6 +65,14 @@ const getEventStyles = (type: string) => {
   return styles[type as keyof typeof styles] || styles.cultural;
 };
 
+// --- Time Formatter ---
+function formatTime(time: string): string {
+  const [h, m] = time.split(":").map(Number);
+  const ampm = h >= 12 && h < 24 ? "PM" : "AM";
+  const hr = h % 12 || 12;
+  return `${hr}:${m.toString().padStart(2, "0")} ${ampm}`;
+}
+
 // ==========================================
 // 1. Mobile Timeline Component (Simplified)
 // ==========================================
@@ -83,7 +91,7 @@ const MobileTimeline = ({ entries, year }: { entries: MobileTimelineEntry[]; yea
         <div className="space-y-6">
           {entries.map((entry) => {
             const isFestival = entry.isFestivalDay;
-            const dt = new Date(year, entry.month, entry.date);
+            const dt = new Date(year, entry.month - 1, entry.date);
             const weekday = dt.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase();
             const monthDay = dt.toLocaleDateString("en-US", { month: "short", day: "2-digit" });
 
@@ -130,7 +138,7 @@ const MobileTimeline = ({ entries, year }: { entries: MobileTimelineEntry[]; yea
                             </div>
                             {(event.startTime || event.venue) && (
                               <div className="mt-2 flex gap-2 text-[10px] text-white/60 uppercase">
-                                {event.startTime && <span>{event.startTime}</span>}
+                                {event.startTime && <span>{formatTime(event.startTime)}</span>}
                                 {event.startTime && event.venue && <span>•</span>}
                                 {event.venue && <span className="truncate">{event.venue}</span>}
                               </div>
@@ -197,12 +205,12 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
   };
 
   const monthName = useMemo(() => {
-    return new Date(year, month).toLocaleString('default', { month: 'long' }).toUpperCase();
+    return new Date(year, month - 1).toLocaleString('default', { month: 'long' }).toUpperCase();
   }, [year, month]);
 
   const calendarDays = useMemo(() => {
-    const firstDay = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDay = new Date(year, month - 1, 1).getDay();
+    const daysInMonth = new Date(year, month, 0).getDate();
     const days = [];
     for (let i = 0; i < firstDay; i++) days.push(null);
     for (let i = 1; i <= daysInMonth; i++) days.push({ date: i, month: month });
@@ -226,7 +234,7 @@ export const CalendarView: React.FC<CalendarViewProps> = ({ month, year, events,
       }
     });
     return Array.from(combinedMap.values()).sort(
-      (a, b) => new Date(year, a.month, a.date).getTime() - new Date(year, b.month, b.date).getTime()
+      (a, b) => new Date(year, a.month - 1, a.date).getTime() - new Date(year, b.month - 1, b.date).getTime()
     );
   }, [events, year]);
 

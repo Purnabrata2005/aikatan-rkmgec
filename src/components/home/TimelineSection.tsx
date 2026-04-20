@@ -15,7 +15,7 @@ const TimelineSection: React.FC = () => {
         />
       </div>
       <div className="flex justify-center">
-        <CalendarView month={4} year={2026} events={events} allEvents={events} />
+        <CalendarView month={5} year={2026} events={events} allEvents={events} />
       </div>
     </div>
   );

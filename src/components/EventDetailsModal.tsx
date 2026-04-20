@@ -23,8 +23,8 @@ interface EventDetailsModalProps {
 }
 
 const FESTIVAL_LABELS: Record<string, string> = {
-  "15-4": "Day 1",
-  "16-4": "Day 2",
+  "15-5": "Day 1",
+  "16-5": "Day 2",
 };
 
 // Warm & Elegant Cultural Fest Vibe Configuration
@@ -99,12 +99,20 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
   events,
   onClose,
 }) => {
+  const getMinutes = (timeStr: string) => {
+    const parts = timeStr.split(":").map(Number);
+    let h = parts[0];
+    const m = parts[1];
+    if (h < 6) h += 24; // Push early morning times (0am-5am) to the end of the "day"
+    return h * 60 + m;
+  };
+
   const dayEvents = useMemo(() => {
     return events
       .filter((e) => e.date === date && e.month === month)
       .sort((a, b) => {
         if (!a.startTime || !b.startTime) return 0;
-        return a.startTime.localeCompare(b.startTime);
+        return getMinutes(a.startTime) - getMinutes(b.startTime);
       });
   }, [events, date, month]);
 
@@ -122,8 +130,8 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
     if (withTimes.length === 0) return { start: "09:00", end: "22:00" };
     const starts = withTimes.map((e) => e.startTime!);
     const ends = withTimes.map((e) => e.endTime!);
-    const earliest = starts.sort()[0];
-    const latest = ends.sort().reverse()[0];
+    const earliest = starts.sort((a, b) => getMinutes(a) - getMinutes(b))[0];
+    const latest = ends.sort((a, b) => getMinutes(b) - getMinutes(a))[0];
     return { start: earliest, end: latest };
   }, [dayEvents]);
 
@@ -212,12 +220,16 @@ export const EventDetailsModal: React.FC<EventDetailsModalProps> = ({
                               <span className="text-sm md:text-base font-semibold text-white/90 tracking-wider">
                                 {formatTime(event.startTime).replace(" ", "")}
                               </span>
-                              <span className="text-[11px] text-white/50 tracking-wider mt-1">
-                                {formatTime(event.endTime || event.startTime).replace(" ", "")}
-                              </span>
-                              <span className="text-[10px] text-fest-gold/70 tracking-widest mt-3 rounded-full border border-fest-gold/20 px-2 py-0.5">
-                                {duration >= 60 ? `${Math.floor(duration / 60)}h${duration % 60 ? ` ${duration % 60}m` : ""}` : `${duration}m`}
-                              </span>
+                              {/* {event.endTime && (
+                                <>
+                                  <span className="text-[11px] text-white/50 tracking-wider mt-1">
+                                    {formatTime(event.endTime).replace(" ", "")}
+                                  </span>
+                                  <span className="text-[10px] text-fest-gold/70 tracking-widest mt-3 rounded-full border border-fest-gold/20 px-2 py-0.5">
+                                    {duration >= 60 ? `${Math.floor(duration / 60)}h${duration % 60 ? ` ${duration % 60}m` : ""}` : `${duration}m`}
+                                  </span>
+                                </>
+                              )}// if you want to show duration */}
                             </>
                           ) : (
                             <span className="text-[11px] text-fest-gold/80 tracking-widest border border-fest-gold/30 rounded-full px-3 py-1 bg-fest-gold/5">ALL DAY</span>
